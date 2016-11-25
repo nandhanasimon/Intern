@@ -16,7 +16,7 @@ class CreateGuestlistTable extends Migration
             $table->increments('id');
             $table->string('guest_name');
             $table->integer('event_id')->unsigned();
-            //$table->foreign('event_id')->references('id')->on('events');
+            $table->foreign('event_id')->references('id')->on('events');
             $table->string('phnumber');
             $table->string('no_of_couples');
             $table->timestamps();
@@ -24,9 +24,9 @@ class CreateGuestlistTable extends Migration
 
 
 
-       Schema::table('guestlist', function($table) {
+       /*Schema::table('guestlist', function($table) {
        $table->foreign('event_id')->references('id')->on('events');
-    });
+    });*/
 
     }
 
