@@ -28,7 +28,7 @@ class HomeController extends Controller
     public function index()
     {
     
-        $event= events::all();
+        $event= Events::all();
         return view('welcome',compact('event')); 
     }
 
@@ -38,7 +38,7 @@ class HomeController extends Controller
     {
         //return "hai";
 
-        $event=events::where("id",$sid)->first();
+        $event=Events::where("id",$sid)->first();
         return view('auth.eventdisplay',compact('event'));
     }
 
@@ -92,18 +92,18 @@ class HomeController extends Controller
         return redirect('profile');
     }
 
-public function addevent()
+    public function addevent()
     {
         return view('auth.addevent');
     }
 
 
-public function listevent()
-{
-$event= events::all();
-return View::make('auth.listevent',compact('event'));
+    public function listevent()
+    {
+        $event= Events::all();
+        return View::make('auth.listevent',compact('event'));
 
-}
+    }
 
 
 
