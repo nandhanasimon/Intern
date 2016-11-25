@@ -30,10 +30,10 @@ td
 
 <table border="5" cellspacing ="12" align ="center" width="600">
     <tr>
-        <td>Event Name</td>
-        <td>Event Venue</td>
-        <td>Date</td>
-        <td>Start Time</td>
+        <th>Event Name</th>
+        <th>Event Venue</th>
+        <th>Date</th>
+        <th>Start Time</th>
      </tr>
      <tr>
         @foreach($event as $evee)
