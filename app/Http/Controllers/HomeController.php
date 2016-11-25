@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 use Auth;
 use App\User;
 use Illuminate\Support\Facades\View;
-use App\events;
+use App\Events;
 use App\Http\Requests;
 use Illuminate\Http\Request;
 
@@ -41,12 +41,6 @@ class HomeController extends Controller
         $event=Events::where("id",$sid)->first();
         return view('auth.eventdisplay',compact('event'));
     }
-
-
-
-
-
-
 
     public function profile()
     {
