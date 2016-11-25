@@ -2,6 +2,30 @@
 
 @section('content')
 
+<style>
+table {
+    border-collapse: collapse;
+    width: 80%;
+}
+
+th, td {
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even){background-color: #f2f2f2}
+
+th {
+    background-color: #00008B;
+    color: #f2f2f2;
+    
+}
+td
+{
+    color: #00008B ;
+}
+</style>
+
 <h1 align="center">LIST OF EVENTS</h1>
 
 <table border="5" cellspacing ="12" align ="center" width="600">
