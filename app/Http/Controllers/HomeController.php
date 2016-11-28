@@ -36,6 +36,15 @@ class HomeController extends Controller
 
     public function bookevent(Request $request , $id)
     {
+
+     $this->validate($request, [
+        'name' => 'required:guest',
+        'number' => 'required'
+        
+        
+    ]);
+
+
         
     $guests = new Guest;    //Guest is the Model name
 

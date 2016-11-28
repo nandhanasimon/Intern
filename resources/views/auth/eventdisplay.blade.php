@@ -1,6 +1,10 @@
 @extends('layouts.app')
 
 @section('content')
+
+
+
+
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
@@ -10,15 +14,15 @@
             <div class="panel panel-default">
                 <div class="panel-heading" align="center">EVENT</div>
 
-                <div class="panel-body">
-                    <form action="#" >
+                    <div class="panel-body">
+                       <form action="#" >
    
-                        <div style="width:293px;height:390px;margin-right: 10px;float: left;">
+                          <div style="width:293px;height:390px;margin-right: 10px;float: left;">
                            
                             <img src="{{ url('images').'/'. $event->photo}}" alt="Mountain View" style="width:290px;height:290px;"><br>
-                        </div>
-                        <div>                  
-                                <table>
+                              </div>
+                              <div>                  
+                               <table>
                                  <tr>
                                     <td>
                                         <label for="name" class="col-md-4 control-label">Name:</label>
@@ -76,6 +80,9 @@
                               <h4 class="modal-title">Book Event</h4>
                             </div>
                             <div class="modal-body">
+
+                          
+
                           
                               <form action="{{ url('/bookevent/'.$event->id) }}" method="post" enctype="multipart/form-data">
                                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
