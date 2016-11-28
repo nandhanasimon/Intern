@@ -90,7 +90,7 @@ td
         </tr>
         <tr>
             <td>
-                 <label for="phnumber" class="col-md-4 control-label">phoneNo</label>
+                 <label for="phnumber" class="col-md-4 control-label">Phone Number</label>
             </td>
             <td>
                  <input id="phnumber" type="text" class="form-control" name="phnumber" value="{{ old('phnumber') }}">
