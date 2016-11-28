@@ -70,7 +70,7 @@ td
                  <label for="phoneNo" class="col-md-4 control-label">phoneNo</label>
             </td>
             <td>
-                {{ $users->phoneNo }}
+                {{ $users->phnumber }}
             </td>
         </tr>
 

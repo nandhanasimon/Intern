@@ -78,6 +78,17 @@ class HomeController extends Controller
 
     public function store(Request $request)
     {
+
+$this->validate($request, [
+        'name' => 'required:users',
+        'email' => 'email|required',
+        'address' => 'required',
+        'phnumber' => 'required'
+        
+    ]);
+
+
+
         $users = User::where("id", Auth::user()->id)->first();
         //echo "<pre>";
         //var_dump($users);
@@ -127,6 +138,14 @@ class HomeController extends Controller
 
 public function storeevent(Request $request)
 {
+
+    $this->validate($request, [
+        'name' => 'required:events',
+        'venue' => 'required',
+        'date' => 'required',
+        'start_time' => 'required'
+        
+    ]);
 
     //$event = events::where("id", Auth::events()->id)->first();
 $event = new events;
