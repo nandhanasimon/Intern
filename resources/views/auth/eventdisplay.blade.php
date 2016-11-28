@@ -77,15 +77,15 @@
                             </div>
                             <div class="modal-body">
                           
-                              <form action="{{ url('/bookevent') }}" method="post" enctype="multipart/form-data">
+                              <form action="{{ url('/bookevent/'.$event->id) }}" method="post" enctype="multipart/form-data">
                                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
                                   Guest Name <br> <input id="name" type="text" placeholder="Name" name="name" required/>
                                   <br> <br>
-                                  phone Number<br> <input id="number" type="text" placeholder="phone number" name="age" required/>
+                                  phone Number<br> <input id="number" type="text" placeholder="phone number" name="number" required/>
                                   <br> <br>
                                   
                                   Total no. of couples
-                                  <select name="no_of_couples" id="">
+                                  <select name="no_of_couples" id="noc">
                                       <option value="1">1</option>
                                       <option value="2">2</option>
                                       <option value="3">3</option>

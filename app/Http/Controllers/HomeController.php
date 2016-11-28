@@ -3,7 +3,8 @@
 namespace App\Http\Controllers;
 use Auth;
 use App\User;
-use App\Guestlist;
+//use App\Model;
+use App\Guest;
 use Illuminate\Support\Facades\View;
 use App\Events;
 use App\Http\Requests;
@@ -33,17 +34,21 @@ class HomeController extends Controller
         return view('welcome',compact('event')); 
     }
 
-    public function bookevent(Request $request)
+    public function bookevent(Request $request , $id)
     {
         
-    $guestlist = new guestlist;
+    $guests = new Guest;    //Guest is the Model name
 
+    //$guests->success="false";
+
+        //dd($request->all());
         echo "<br><br>";
         echo "<pre>";
-        $guestlist->guest_name = $request->name;
-        $guestlist->phnumber = $request->number;
-        //$guestlist->event_id = $request->event->id;
-        $guestlist->save();
+        $guests->guest_name = $request->name;
+        $guests->phnumber = $request->number;
+        $guests->event_id = $id;
+        $guests->no_of_couples=$request->no_of_couples;   //will be passing the names of input feilds
+        $guests->save();
         return redirect('listevent');
 
 
