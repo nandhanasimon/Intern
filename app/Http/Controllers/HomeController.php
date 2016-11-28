@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 use Auth;
 use App\User;
+//use App\Model;
+use App\Guest;
 use Illuminate\Support\Facades\View;
-use App\events;
+use App\Events;
 use App\Http\Requests;
 use Illuminate\Http\Request;
 
@@ -28,27 +30,42 @@ class HomeController extends Controller
     public function index()
     {
     
-        $event= events::all();
+        $event= Events::all();
         return view('welcome',compact('event')); 
     }
 
+    public function bookevent(Request $request , $id)
+    {
+        
+    $guests = new Guest;    //Guest is the Model name
 
+    //$guests->success="false";
+
+        //dd($request->all());
+        echo "<br><br>";
+        echo "<pre>";
+        $guests->guest_name = $request->name;
+        $guests->phnumber = $request->number;
+        $guests->event_id = $id;
+        $guests->no_of_couples=$request->no_of_couples;   //will be passing the names of input feilds
+        $guests->save();
+        return redirect('listevent');
+
+
+
+    }
 
     public function eventdisplay($sid)
     {
         //return "hai";
 
-        $event=events::where("id",$sid)->first();
+        $event=Events::where("id",$sid)->first();
         return view('auth.eventdisplay',compact('event'));
     }
 
 
 
-
-
-
-
-    public function profile()
+        public function profile()
     {
         $users=Auth::user();
         return view('auth.profile',compact('users'));
@@ -92,18 +109,18 @@ class HomeController extends Controller
         return redirect('profile');
     }
 
-public function addevent()
+    public function addevent()
     {
         return view('auth.addevent');
     }
 
 
-public function listevent()
-{
-$event= events::all();
-return View::make('auth.listevent',compact('event'));
+    public function listevent()
+    {
+        $event= Events::all();
+        return View::make('auth.listevent',compact('event'));
 
-}
+    }
 
 
 

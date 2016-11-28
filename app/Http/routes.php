@@ -41,7 +41,7 @@ Route::get('/listevent','HomeController@listevent');
 
 Route::get('/eventdisplay/{numb}','HomeController@eventdisplay');
 
-//Route::get('/bookevent','HomeController@bookevent');
+Route::post('/bookevent/{num}','HomeController@bookevent');
 
 
 

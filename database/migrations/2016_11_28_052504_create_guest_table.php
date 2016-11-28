@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateGuestlistTable extends Migration
+class CreateGuestTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,25 +12,16 @@ class CreateGuestlistTable extends Migration
      */
     public function up()
     {
-        Schema::create('guestlist', function (Blueprint $table) {
+        Schema::create('guest', function (Blueprint $table) {
             $table->increments('id');
             $table->string('guest_name');
-            $table->integer('event_id')->unsigned();
-            //$table->foreign('event_id')->references('id')->on('events');
             $table->string('phnumber');
+            $table->integer('event_id')->unsigned();
+            $table->foreign('event_id')->references('id')->on('events');
             $table->string('no_of_couples');
             $table->timestamps();
         });
-
-
-
-       Schema::table('guestlist', function($table) {
-       $table->foreign('event_id')->references('id')->on('events');
-    });
-
     }
-
-
 
     /**
      * Reverse the migrations.
@@ -39,6 +30,6 @@ class CreateGuestlistTable extends Migration
      */
     public function down()
     {
-        Schema::drop('guestlist');
+        Schema::drop('guest');
     }
 }

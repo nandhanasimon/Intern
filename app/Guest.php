@@ -4,16 +4,14 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class events extends Model
+class Guest extends Model
 {
-    /**
-     * The attributes that are mass assignable.
-     *
-     * @var array
-     */
+
+    public $table = "guest";
     protected $fillable = [
-        'event_name', 'venue', 'date', 'start_time', 'photo', 
+        'guest_name', 'phnumber', 'no_of_couples', 'event_id' 
     ];
+
 
     /**
      * The attributes that should be hidden for arrays.
@@ -21,6 +19,7 @@ class events extends Model
      * @var array
      */
     protected $hidden = [
-       'remember_token',
+       'remember_token', 
     ];
+
 }
