@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use Auth;
 use App\User;
+use App\Guestlist;
 use Illuminate\Support\Facades\View;
 use App\Events;
 use App\Http\Requests;
@@ -32,7 +33,22 @@ class HomeController extends Controller
         return view('welcome',compact('event')); 
     }
 
+    public function bookevent(Request $request)
+    {
+        
+    $guestlist = new guestlist;
 
+        echo "<br><br>";
+        echo "<pre>";
+        $guestlist->guest_name = $request->name;
+        $guestlist->phnumber = $request->number;
+        //$guestlist->event_id = $request->event->id;
+        $guestlist->save();
+        return redirect('listevent');
+
+
+
+    }
 
     public function eventdisplay($sid)
     {
@@ -42,7 +58,9 @@ class HomeController extends Controller
         return view('auth.eventdisplay',compact('event'));
     }
 
-    public function profile()
+
+
+        public function profile()
     {
         $users=Auth::user();
         return view('auth.profile',compact('users'));
