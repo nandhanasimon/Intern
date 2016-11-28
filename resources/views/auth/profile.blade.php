@@ -74,14 +74,6 @@ td
             </td>
         </tr>
 
-           <tr>
-            <td>
-                 <label for="image" class="col-md-4 control-label">image</label>
-            </td>
-            <td>
-                {{ $users->image }}
-            </td>
-        </tr>
 
           <tr>
             <td>
