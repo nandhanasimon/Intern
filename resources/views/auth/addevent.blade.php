@@ -88,7 +88,7 @@ td
         </tr>
         <tr>
             <td>
-                 <label for="start_time" class="col-md-4 control-label">Start_Time</label>
+                 <label for="start_time" class="col-md-4 control-label">Start Time</label>
             </td>
             <td>
                  <input id="start_time" type="text" class="form-control" name="start_time" placeholder="enter the start-time">
@@ -96,7 +96,7 @@ td
         </tr>
         <tr>
             <td>
-                 <label for="photo" class="col-md-4 control-label">Select Image </label>
+                 <label for="photo" class="col-md-4 control-label">Select Image</label>
             </td>
             <td>
                  <input id="photo" type="file"  name="photo">

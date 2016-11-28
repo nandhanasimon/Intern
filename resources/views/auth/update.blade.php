@@ -28,6 +28,38 @@
 
 
 
+<style>
+h1{
+    color: #00008B;
+
+
+}
+table {
+    border-collapse: collapse;
+    
+}
+
+th, td {
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even){background-color: #f2f2f2}
+
+th {
+    background-color: #00008B;
+    color: #f2f2f2;
+    
+}
+td
+{
+    color: #00008B ;
+}
+</style>
+
+
+
+
 <h1 align="center">UPDATING</h1>
 <form method="post" action="{{ url('/store') }}" enctype="multipart/form-data">
 	<input type="hidden" name="_token" value="{{ csrf_token() }}">
@@ -69,10 +101,10 @@
 
         <tr>
             <td>
-                 <label for="file" class="col-md-4 control-label">select image </label>
+                 <label for="file" class="col-md-4 control-label">Select Image </label>
             </td>
             <td>
-                 <input id="file" type="file" class="form-control" name="file">
+                 <input id="file" type="file"  name="file">
             </td>
             
         </tr>
