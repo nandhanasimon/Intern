@@ -60,7 +60,7 @@ td
 
 
 
-<h1 align="center">UPDATING</h1>
+<h1 align="center">UPDATE</h1>
 <form method="post" action="{{ url('/store') }}" enctype="multipart/form-data">
 	<input type="hidden" name="_token" value="{{ csrf_token() }}">
     <table align="center">
