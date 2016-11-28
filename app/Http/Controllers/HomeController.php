@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use Auth;
+use Carbon\Carbon;
 use App\User;
 //use App\Model;
 use App\Guest;
@@ -157,13 +158,16 @@ public function storeevent(Request $request)
     ]);
 
     //$event = events::where("id", Auth::events()->id)->first();
-$event = new events;
+        $event = new events;
+
+
+
 
         echo "<br><br>";
         echo "<pre>";
         $event->event_name = $request->name;
         $event->venue = $request->venue;
-        $event->date = $request->date;
+        $event->date = Carbon::createFromFormat('d/m/Y', $request->date)->toDateString();
         $event->start_time = $request->start_time;
 
         $filepath=public_path('/images/');

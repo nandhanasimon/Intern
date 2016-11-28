@@ -83,7 +83,9 @@ td
                  <label for="date" class="col-md-4 control-label">Date</label>
             </td>
             <td>
-                 <input id="date" type="text" class="form-control" name="date" placeholder="enter the date">
+                {{ Form::text('date', '', array('id' => 'datepicker')) }}
+
+                 <!--<input id="datepicker" type="text" class="form-control" name="date" placeholder="enter the date">-->
             </td>
         </tr>
         <tr>
