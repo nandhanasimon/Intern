@@ -12,7 +12,7 @@
 
                    
                     @foreach($event as $e)
-                        <div style="width:293px;height:390px;margin-right: 10px;float: left;"class="col-sm-4" style="background-color:lavender;">
+                        <div class="col-sm-4">
                             <a href="{{ '/eventdisplay/'.$e->id }}  ">
                             <img src="{{ url('images').'/'. $e->photo}}" alt="Mountain View" style="width:290px;height:290px;"><br>
                             </a>
