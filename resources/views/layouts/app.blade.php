@@ -40,34 +40,54 @@
 
                 <!-- Branding Image -->
                 <a class="navbar-brand" href="{{ url('/') }}">
-                    CLUBBERS
+                     <font color="#390C8A" face="dauphin">  clubbers</font>
                 </a>
             </div>
 
             <div class="collapse navbar-collapse" id="app-navbar-collapse">
                 <!-- Left Side Of Navbar -->
                 <ul class="nav navbar-nav">
-                    <li><a href="{{ url('/home') }}">Home</a></li>
-                    <li><a href="{{ url('/listevent') }}">List Events</a></li>
+                    <li><a href="{{ url('/home') }}">
+
+                    <font color="#1B21D8" face="dauphin">  Home</font>
+
+                </a>
+            </li>
+                    <li><a href="{{ url('/listevent') }}"><font color="#1B21D8" face="dauphin">  ListEvent</font> </a></li>
                 </ul>
 
                 <!-- Right Side Of Navbar -->
                 <ul class="nav navbar-nav navbar-right">
                     <!-- Authentication Links -->
                     @if (Auth::guest())
-                        <li><a href="{{ url('/login') }}">Login</a></li>
-                        <li><a href="{{ url('/register') }}">Register</a></li>
-                    @else
-                    <li><a href="{{ url('/profile') }}">Profile</a></li>
+                        <li><a href="{{ url('/login') }}">
+                            <font color="#1B21D8" face="dauphin">  Login</font>
 
-                     <li><a href="{{ url('/addevent') }}">Add Event</a></li>  
+                        </a></li>
+                        <li><a href="{{ url('/register') }}">
+                            
+                            <font color="#1B21D8" face="dauphin">  Register</font>
+                        </a></li>
+                    @else
+                    <li><a href="{{ url('/profile') }}">
+                        
+                        <font color="#1B21D8" face="dauphin">  Profile</font>
+                    </a></li>
+
+                     <li><a href="{{ url('/addevent') }}">
+                         
+                         <font color="#1B21D8" face="dauphin">  AddEvent</font>
+                     </a></li>  
 
 
 
 
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                                {{ Auth::user()->name }} <span class="caret"></span>
+
+
+                                <font color="#1B21D8" face="dauphin">{{ Auth::user()->name }} </font>
+                                 <span class="caret"></span>
                             </a>
         
 

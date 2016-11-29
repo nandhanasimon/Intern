@@ -5,7 +5,11 @@
     <div class="row">
         <div class="col-md-10 col-md-offset-1">
             <div class="panel panel-default">
-                <div class="panel-heading" align="center">All EVENTS</div>
+                <div class="panel-heading" align="center">
+                     <font color="#1397DB" face="dauphin">  ALL EVENTS</font>
+
+
+                </div>
 
                 <div class="panel-body">
                     <!--Your Application's Landing Page.<br>-->
