@@ -86,19 +86,10 @@ class HomeController extends Controller
         return view('auth.update');
     }
 
-    public function store(Request $request)
+    public function store(UpdateRequest $request)
     {
 
-$this->validate($request, [
-        'name' => 'required:users',
-        'email' => 'email|required',
-        'address' => 'required',
-        'phnumber' => 'required'
-        
-    ]);
-
-
-
+//
         $users = User::where("id", Auth::user()->id)->first();
         //echo "<pre>";
         //var_dump($users);
