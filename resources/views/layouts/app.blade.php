@@ -89,18 +89,39 @@
                             Login
                          </font> 
                          </a></li>
-                        <li><a href="{{ url('/register') }}">Register</a></li>
+                        <li><a href="{{ url('/register') }}">
+                           <font color="white"> 
+                           
+                            Register
+                           </font>
+                        </a></li>
                     @else
-                    <li><a href="{{ url('/profile') }}">Profile</a></li>
+                    <li><a href="{{ url('/profile') }}">
 
-                     <li><a href="{{ url('/addevent') }}">Add Event</a></li>  
+                          <font color="white"> 
+                        Profile
+                      </font>
+                    </a></li>
+
+                     <li><a href="{{ url('/addevent') }}">
+
+                    <font color="white"> 
+                        Add Event
+                        </font>
+
+                    </a></li>  
 
 
 
 
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                                {{ Auth::user()->name }} <span class="caret"></span>
+                               <font color="white"> 
+
+                                {{ Auth::user()->name }} 
+
+                              </font>
+                                <span class="caret"></span>
                             </a>
         
 
