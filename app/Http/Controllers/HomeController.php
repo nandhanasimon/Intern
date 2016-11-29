@@ -9,6 +9,8 @@ use App\Guest;
 use Illuminate\Support\Facades\View;
 use App\Events;
 use App\Http\Requests\UpdateRequest;
+use App\Http\Requests\BookEventRequest;
+use App\Http\Requests\StoreEventRequest;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -35,18 +37,9 @@ class HomeController extends Controller
         return view('welcome',compact('event')); 
     }
 
-    public function bookevent(Request $request , $id)
+    public function bookevent(BookEventRequest $request , $id)
     {
-
-     $this->validate($request, [
-        'name' => 'required:guest',
-        'number' => 'required'
-        
-        
-    ]);
-
-
-        
+   
     $guests = new Guest;    //Guest is the Model name
 
     //$guests->success="false";
@@ -139,23 +132,14 @@ class HomeController extends Controller
 
 
 
-public function storeevent(Request $request)
+public function storeevent(StoreEventRequest $request)
 {
 
-    $this->validate($request, [
-        'name' => 'required:events',
-        'venue' => 'required',
-        'date' => 'required',
-        'start_time' => 'required'
-        
-    ]);
+    
 
 
     //$event = events::where("id", Auth::events()->id)->first();
         $event = new events;
-
-
-
 
         echo "<br><br>";
         echo "<pre>";

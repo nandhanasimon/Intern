@@ -5,8 +5,7 @@ namespace App\Http\Requests;
 use App\Http\Requests\Request;
 
 
-
-class UpdateRequest extends Request
+class BookEventRequest extends Request
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -27,13 +26,11 @@ class UpdateRequest extends Request
     {
         return [
 
-        'name' => 'required',
-        'email' => 'email|required',
-        'address' => 'required',
-        'phnumber' => 'required',
+        'name' => 'required:guest',
+        'number' => 'required'
         
-
-
+        
+            //
         ];
     }
 }
