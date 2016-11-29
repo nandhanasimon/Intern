@@ -5,24 +5,37 @@
     <div class="row">
         <div class="col-md-10 col-md-offset-1">
             <div class="panel panel-default">
-                <div class="panel-heading" align="center">All EVENTS</div>
+                <div class="panel-heading" align="center" style="background-color:black;" >
+
+                   <font color="white">
+                    All EVENTS
+
+                    </font>
+                </div>
 
                 <div class="panel-body">
                     <!--Your Application's Landing Page.<br>-->
 
                    
                     @foreach($event as $e)
-                        <div class="col-sm-4">
+                        <div class="col-sm-4" style="background-color:black;">
                             <a href="{{ '/eventdisplay/'.$e->id }}  ">
                             <img src="{{ url('images').'/'. $e->photo}}" alt="Mountain View" style="width:290px;height:290px;"><br>
                             </a>
                             <table>
                             <tr>
                                 <td>
-                                    <label for="name" class="col-md-4 control-label">Name:</label>
+                                    <label for="name" class="col-md-4 control-label">
+
+                                   <font color="white">
+                                        Name:</label>
+                                    </font>
                                 </td>
                                 <td>
-                                    <label for="name" >{{ $e->event_name }}</label>
+                                    <label for="name" >
+                                     <font color="white">
+                                        {{ $e->event_name }}</label>
+                                    </font>
                                     <!--class="col-md-4 control-label"-->
                                 </td>
 
@@ -30,26 +43,55 @@
 
                             <tr>
                                 <td>
-                                    <label for="venue" class="col-md-4 control-label">Venue</label>
+                                    <label for="venue" class="col-md-4 control-label">
+                                   <font color="white">
+                                        Venue:
+                                    </font>
+
+                                    </label>
                                 </td>
                                 <td>
-                                    <label for="venue" >{{ $e->venue }}</label>
+                                    <label for="venue" >
+                                  <font color="white">
+
+                                        {{ $e->venue }}
+                                   </font>
+                                    </label>
                                 </td>
                             </tr>
                             <tr>
                                 <td>
-                                    <label for="time" class="col-md-4 control-label">Time</label>
+                                    <label for="time" class="col-md-4 control-label">
+
+                                     <font color="white">
+                                        Time: 
+                                    </font>
+                                    </label>
                                 </td>
                                 <td>
-                                    <label for="time" >{{ $e->start_time }}</label>
+                                    <label for="time" >
+                                    <font color="white">
+                                        {{ $e->start_time }}
+                                    </font>
+                                    </label>
                                 </td>
                             </tr>
                             <tr>
                                 <td>
-                                    <label for="date" class="col-md-4 control-label">date</label>
+                                    <label for="date" class="col-md-4 control-label">
+
+                                      <font color="white">
+                                        Date:
+                                       </font>
+
+                                    </label>
                                 </td>
                                 <td>
-                                    <label for="date" >{{ $e->date }}</label>
+                                    <label for="date" >
+                                     <font color="white">
+                                        {{ $e->date }}
+                                     </font>
+                                    </label>
                                 </td>
                             </tr>
                             </table>
