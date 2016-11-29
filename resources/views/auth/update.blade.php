@@ -30,7 +30,7 @@
 
 <style>
 h1{
-    color: #00008B;
+    color: #FBE8E8;
 
 
 }
@@ -44,29 +44,48 @@ th, td {
     padding: 8px;
 }
 
-tr:nth-child(even){background-color: #f2f2f2}
+/* tr:nth-child(even){background-color: #f2f2f2} */
 
 th {
-    background-color: #00008B;
+    background-color: #FDEDED;
     color: #f2f2f2;
     
 }
 td
 {
-    color: #00008B ;
+    color: #FDEDED ;
 }
 </style>
 
+<div class="panel-heading" align="center" style="background-color:black;" >
+
+                   
+                    <h1 align="center"> 
+                    <font color="#319BED">
+                        UPDATE
+
+                    </font>
+                    </h1>
+                </div>
 
 
 
-<h1 align="center">UPDATE</h1>
 <form method="post" action="{{ url('/store') }}" enctype="multipart/form-data">
 	<input type="hidden" name="_token" value="{{ csrf_token() }}">
+    
+
+
+  <div id="tab"class="col-sm-12" style="background-color:black;">
     <table align="center">
         <tr>
             <td>
-                  <label for="name" class="col-md-4 control-label">Name</label>
+                  <label for="name" class="col-md-4 control-label">
+
+
+                    Name
+
+
+                  </label>
             </td>
             <td>
                  <input id="name" type="text" class="form-control" name="name" value="{{ old('name') }}">
@@ -118,6 +137,8 @@ td
         </tr>        
 
     </table>
+
+  </div>
 </form>
 
 @endsection

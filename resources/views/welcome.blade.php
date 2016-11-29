@@ -7,7 +7,7 @@
             <div class="panel panel-default">
                 <div class="panel-heading" align="center" style="background-color:black;" >
 
-                   <font color="white">
+                   <font color="#319BED">
                     All EVENTS
 
                     </font>

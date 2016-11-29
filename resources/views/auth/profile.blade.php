@@ -4,7 +4,7 @@
 
 <style>
 h1{
-    color: #00008B;
+    color: #150404;
 
 
 }
@@ -18,24 +18,47 @@ th, td {
     padding: 8px;
 }
 
-tr:nth-child(even){background-color: #f2f2f2}
-
+/* tr:nth-child(even){background-color: #f2f2f2}
+ */
 th {
     background-color: #00008B;
-    color: #f2f2f2;
+    color: #FDEDED;
     
 }
 td
 {
-    color: #00008B ;
+    color: #FDEDED;
 }
+
+/* #tab{
+margin: 10;
+    text-align: center;
+    width: 800px;
+
+} */
+
 </style>
 
 
 
+<div class="panel-heading" align="center" style="background-color:black;" >
 
-<h1 align="center"> PROFILE</h1>
+                   
+                    <h1 align="center"> 
+                    <font color="#319BED">
+                        PROFILE
+
+                    </font>
+                    </h1>
+                </div>
+
+
+
 <form action="{{ url('/updateprofile') }}">
+
+
+<div id="tab"class="col-sm-12" style="background-color:black;">
+    
     <table align="center">
         <tr>
             <td>
@@ -82,8 +105,9 @@ td
             </td>
             
         </tr>        
-
+</div>
     </table>
+
 </form>
 
  

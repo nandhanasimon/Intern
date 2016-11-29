@@ -35,14 +35,14 @@
         }
 
         .fa-btn {
-            margin-right: 6px;
+            margin-right: 10px;
         }
     </style>
 </head>
 <body id="app-layout">
-    <nav class="navbar navbar-default navbar-static-top">
-        <div class="container">
-            <div class="navbar-header">
+    <nav class="navbar navbar-default navbar-static-top" >
+      <!--   <div class="container"> -->
+            <div class="navbar-header"  >
 
                 <!-- Collapsed Hamburger -->
                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#app-navbar-collapse">
@@ -62,7 +62,7 @@
                 <!-- Left Side Of Navbar -->
                 <ul class="nav navbar-nav">
                     <li><a href="{{ url('/home') }}">
-                       <font color="white"> 
+                       <font color="#319BED"> 
 
                         Home
 
@@ -70,7 +70,7 @@
                     </a></li>
                     <li><a href="{{ url('/listevent') }}">
 
-                          <font color="white"> 
+                          <font color="#319BED"> 
 
 
                         List Events
@@ -85,12 +85,12 @@
                     @if (Auth::guest())
                         <li><a href="{{ url('/login') }}"> 
 
-                          <font color="white"> 
+                          <font color="#319BED"> 
                             Login
                          </font> 
                          </a></li>
                         <li><a href="{{ url('/register') }}">
-                           <font color="white"> 
+                           <font color="#319BED"> 
                            
                             Register
                            </font>
@@ -98,14 +98,14 @@
                     @else
                     <li><a href="{{ url('/profile') }}">
 
-                          <font color="white"> 
+                          <font color="#319BED"> 
                         Profile
                       </font>
                     </a></li>
 
                      <li><a href="{{ url('/addevent') }}">
 
-                    <font color="white"> 
+                    <font color="#319BED"> 
                         Add Event
                         </font>
 
@@ -116,7 +116,7 @@
 
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                               <font color="white"> 
+                               <font color="#319BED"> 
 
                                 {{ Auth::user()->name }} 
 
