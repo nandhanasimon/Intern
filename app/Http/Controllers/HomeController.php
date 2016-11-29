@@ -8,7 +8,7 @@ use App\User;
 use App\Guest;
 use Illuminate\Support\Facades\View;
 use App\Events;
-use App\Http\Requests;
+use App\Http\Requests\UpdateRequest;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
