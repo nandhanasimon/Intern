@@ -1,31 +1,18 @@
 @extends('layouts.app')
 
 @section('content')
-<head>
-<meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-</head>
-
-
 <div class="container">
     <div class="row">
         <div class="col-md-10 col-md-offset-1">
             <div class="panel panel-default">
-                <div class="panel-heading" align="center">
-                     <font color="#1397DB" face="dauphin">  ALL EVENTS</font>
-
-
-                </div>
+                <div class="panel-heading" align="center">All EVENTS</div>
 
                 <div class="panel-body">
                     <!--Your Application's Landing Page.<br>-->
 
                    
                     @foreach($event as $e)
-                        <div class="col-sm-4" style="background-color:lavender;">
+                        <div style="width:293px;height:390px;margin-right: 10px;float: left;"class="col-sm-4" style="background-color:lavender;">
                             <a href="{{ '/eventdisplay/'.$e->id }}  ">
                             <img src="{{ url('images').'/'. $e->photo}}" alt="Mountain View" style="width:290px;height:290px;"><br>
                             </a>

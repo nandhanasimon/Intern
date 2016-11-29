@@ -1,19 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>CLUBBERS</title>
-    <link rel="stylesheet" href="//code.jquery.com/ui/1.11.2/themes/smoothness/jquery-ui.css">
-    <!-- Fonts -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css" integrity="sha384-XdYbMnZ/QjLh6iI4ogqCTaIjrFk87ip+ekIjefZch0Y+PvJ8CDYtEs1ipDmPorQ+" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700">
 
-    <!-- Styles -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-    {{-- <link href="{{ elixir('css/app.css') }}" rel="stylesheet"> --}}
+   <meta charset="utf-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   
+   <title>CLUBBERS</title>
+   <link rel="stylesheet" href="//code.jquery.com/ui/1.11.2/themes/smoothness/jquery-ui.css">
+   
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css" integrity="sha384-XdYbMnZ/QjLh6iI4ogqCTaIjrFk87ip+ekIjefZch0Y+PvJ8CDYtEs1ipDmPorQ+" crossorigin="anonymous">
+   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700">
+   
+   
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+   {{-- <link href="{{ elixir('css/app.css') }}" rel="stylesheet"> --}}
+
+
+
+
+   <!-- <meta charset="utf-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1">
+     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+     -->
+
+
 
     <style>
         body {
@@ -40,54 +54,34 @@
 
                 <!-- Branding Image -->
                 <a class="navbar-brand" href="{{ url('/') }}">
-                     <font color="#390C8A" face="dauphin">  clubbers</font>
+                    CLUBBERS
                 </a>
             </div>
 
-            <div class="collapse navbar-collapse" id="app-navbar-collapse">
+            <div class="collapse navbar-collapse" id="app-navbar-collapse" >
                 <!-- Left Side Of Navbar -->
                 <ul class="nav navbar-nav">
-                    <li><a href="{{ url('/home') }}">
-
-                    <font color="#1B21D8" face="dauphin">  Home</font>
-
-                </a>
-            </li>
-                    <li><a href="{{ url('/listevent') }}"><font color="#1B21D8" face="dauphin">  ListEvent</font> </a></li>
+                    <li><a href="{{ url('/home') }}">Home</a></li>
+                    <li><a href="{{ url('/listevent') }}">List Events</a></li>
                 </ul>
 
                 <!-- Right Side Of Navbar -->
                 <ul class="nav navbar-nav navbar-right">
                     <!-- Authentication Links -->
                     @if (Auth::guest())
-                        <li><a href="{{ url('/login') }}">
-                            <font color="#1B21D8" face="dauphin">  Login</font>
-
-                        </a></li>
-                        <li><a href="{{ url('/register') }}">
-                            
-                            <font color="#1B21D8" face="dauphin">  Register</font>
-                        </a></li>
+                        <li><a href="{{ url('/login') }}">Login</a></li>
+                        <li><a href="{{ url('/register') }}">Register</a></li>
                     @else
-                    <li><a href="{{ url('/profile') }}">
-                        
-                        <font color="#1B21D8" face="dauphin">  Profile</font>
-                    </a></li>
+                    <li><a href="{{ url('/profile') }}">Profile</a></li>
 
-                     <li><a href="{{ url('/addevent') }}">
-                         
-                         <font color="#1B21D8" face="dauphin">  AddEvent</font>
-                     </a></li>  
+                     <li><a href="{{ url('/addevent') }}">Add Event</a></li>  
 
 
 
 
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-
-
-                                <font color="#1B21D8" face="dauphin">{{ Auth::user()->name }} </font>
-                                 <span class="caret"></span>
+                                {{ Auth::user()->name }} <span class="caret"></span>
                             </a>
         
 
