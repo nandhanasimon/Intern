@@ -12,13 +12,10 @@
          {{$error}}
       </li>
 
-
       @endforeach
 
     </ul>
-    
-
-  </div>
+ </div>
   
 
 
@@ -58,7 +55,7 @@ td
 
 
 <h1 align="center">UPDATE EVENT DETAILS</h1>
-<form method="post" action="{{ url('/storeevent') }}" enctype="multipart/form-data">
+<form method="post" action="{{ url('/storeupdateevent/'.$e->id) }}" enctype="multipart/form-data">
   
     <input type="hidden" name="_token" value="{{ csrf_token() }}">
     <table align="center">
@@ -67,7 +64,7 @@ td
                   <label for="event_name" class="col-md-4 control-label"> Event Name</label>
             </td>
             <td>
-                 <input id="name" type="text" class="form-control" name="name" value="enter the event name">
+                 <input id="name" type="text" class="form-control" name="name" value="{{ $e->event_name }}">
             </td>
         </tr>
         <tr>
@@ -75,7 +72,7 @@ td
                  <label for="venue" class="col-md-4 control-label">Venue</label>
             </td>
             <td>
-                 <input id="venue" type="text" class="form-control" name="venue" value="enter the venue name">
+                 <input id="venue" type="text" class="form-control" name="venue" value="{{ $e->venue }}">
             </td>
         </tr>
         <tr>
@@ -83,9 +80,10 @@ td
                  <label for="date" class="col-md-4 control-label">Date</label>
             </td>
             <td>
-                {{ Form::text('date', '', array('id' => 'datepicker')) }}
+                {{ Form::text('date', "", array('id' => 'datepicker')) }}
 
-                 <!--<input id="datepicker" type="text" class="form-control" name="date" placeholder="enter the date">-->
+                 <!--{{ $e->date }}
+                 <input id="datepicker" type="text" class="form-control" name="date" placeholder="enter the date">-->
             </td>
         </tr>
         <tr>
@@ -93,7 +91,7 @@ td
                  <label for="start_time" class="col-md-4 control-label">Start Time</label>
             </td>
             <td>
-                 <input id="start_time" type="text" class="form-control" name="start_time" value=enter the start-time">
+                 <input id="start_time" type="text" class="form-control" name="start_time" value="{{ $e->start_time }}">
             </td>
         </tr>
         <tr>

@@ -68,7 +68,8 @@ class HomeController extends Controller
     public function eventdisplay($sid)
     {
         //return "hai";
-
+        //$u=Auth::User()->id;
+        //dd($u);
         $event=Events::where("id",$sid)->first();
         return view('auth.eventdisplay',compact('event'));
     }
@@ -91,6 +92,7 @@ class HomeController extends Controller
 
 //
         $users = User::where("id", Auth::user()->id)->first();
+        //dd($users->all());
         //echo "<pre>";
         //var_dump($users);
         echo "<br><br>";
@@ -148,6 +150,7 @@ public function storeevent(Request $request)
         
     ]);
 
+
     //$event = events::where("id", Auth::events()->id)->first();
         $event = new events;
 
@@ -175,14 +178,50 @@ public function storeevent(Request $request)
             return "File does not exist";
         }
 
+        $event->creator_id=Auth::user()->id;
         $event->save();
-        //$events=Auth::events();
         return redirect('listevent');
 
 }
 
     public function test(){
         return "test";
+    }
+
+    public function updateevent($id)
+    {
+        $e=Events::where("id",$id)->first();
+        //dd($e);
+        return view('auth.updateevent',compact('e'));
+
+    }
+    public function storeupdateevent(Request $request,$id)
+    {
+
+        $event=Events::where("id",$id)->first();
+
+        $event->event_name=$request->name;
+        $event->venue=$request->venue;
+        $event->date=$request->date;
+        $event->start_time=$request->start_time;
+        $filepath=public_path('/images/');
+
+        $file=$request->photo;
+        if($request->hasfile('photo'))
+        { 
+            $name = time(). '-' .$file->getClientOriginalName();
+            $event->photo = $name;
+            $file->move($filepath, $name);
+        }
+        else
+        {
+            return "File does not exist";
+        }
+        $event->creator_id=Auth::user()->id;
+        $event->save();
+
+        return redirect('/home'); 
+
     }
 
 

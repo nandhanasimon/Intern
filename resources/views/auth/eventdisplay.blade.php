@@ -51,10 +51,12 @@
                                     </td>
                                 </tr>
                                 <tr>
+
                                     <td>
                                         <label for="date" class="col-md-4 control-label">date</label>
                                     </td>
                                     <td>
+                                    
                                         <label for="date" >{{ $event->date }}</label>
                                     </td>
                                 </tr>
@@ -66,8 +68,15 @@
                             </table>
                         </div>
                     </form>
-                        <!-- Trigger the modal with a button -->
-                      <button type="button" class="btn btn-primary"  data-toggle="modal" data-target="#myModal">BOOK</button>
+                          <!-- Trigger the modal with a button -->
+                      @if(Auth::check())
+                        @if($event->creator_id==Auth::User()->id)
+                           <a href="{{ url('/updateevent/'.$event->id) }}"><button type="button" class="btn btn-primary" onclick="{{ url('/updateevent') }}" >UPDATE</button></a>
+                        @endif
+                      @endif
+                      
+                        <button type="button" class="btn btn-primary"  data-toggle="modal" data-target="#myModal">BOOK</button>
+                      
 
                       <!-- Modal -->
                       <div class="modal fade" id="myModal" role="dialog">

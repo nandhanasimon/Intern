@@ -43,7 +43,9 @@ Route::get('/eventdisplay/{numb}','HomeController@eventdisplay');
 
 Route::post('/bookevent/{num}','HomeController@bookevent');
 
+Route::get('/updateevent/{num}','HomeController@updateevent');
 
+Route::post('/storeupdateevent/{num}','HomeController@storeupdateevent');
 
 
 
