@@ -32,10 +32,38 @@ class admincontroller extends Controller
 
  public function showcity()
     {
+    	//return "SHOW CITY PAGE";
        $cit= City::all();
-        return View::make('admin.showcity',compact('cit'));
+       return View::make('admin.showcity',compact('cit'));
 
     }
+
+
+
+    public function addvenue()
+    {
+    	return view('admin.addvenue');
+    }
+
+    public function storevenue(Request $request)
+    {
+    	echo "<br><br>";
+        echo "<pre>";
+    	$t = new Venue;
+    	$t->vname=$request->name;
+    	$t->mobileno=$request->number;
+    	$t->category=$request->category;
+    	$t->address=$request->address;
+
+    	$t->save();
+
+    	
+
+
+
+    }
+
+
 
 
 
