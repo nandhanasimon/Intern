@@ -57,11 +57,15 @@ class admincontroller extends Controller
 
     	$t->save();
 
-    	
-
-
+    }
+    public function showvenue()
+    {
+    	//return "SHOW CITY PAGE";
+       $ven= Venue::all();
+       return View::make('admin.showvenue',compact('ven'));
 
     }
+
 
 
 

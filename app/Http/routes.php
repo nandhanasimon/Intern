@@ -59,6 +59,9 @@ Route::get('/addvenue','admincontroller@addvenue');
 
 Route::post('/storevenue','admincontroller@storevenue');
 
+Route::get('/showvenue','admincontroller@showvenue');
+
+
 
 
 
