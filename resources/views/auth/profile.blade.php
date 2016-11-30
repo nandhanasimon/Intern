@@ -39,7 +39,8 @@ margin: 10;
 
 </style>
 
-
+<div class="table-responsive">
+    <table class="table">
 
 <div class="panel-heading" align="center" style="background-color:#43524B;" >
 
@@ -140,7 +141,8 @@ margin: 10;
     </table>
 
 </form>
-
+</table>
+</div>
  
 
 @endsection

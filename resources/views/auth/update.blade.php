@@ -53,9 +53,11 @@ th {
 }
 td
 {
-    color: #FDEDED ;
+    color: #0C0B1D ;
 }
 </style>
+<div class="table-responsive">
+    <table class="table">
 
 <div class="panel-heading" align="center" style="background-color:#151414;" >
 
@@ -140,5 +142,8 @@ td
 
   </div>
 </form>
+
+</table>
+</div>
 
 @endsection
