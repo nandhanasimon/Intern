@@ -54,15 +54,15 @@
 
                 <!-- Branding Image -->
                 <a class="navbar-brand" href="{{ url('/') }}">
-                 <font color="green">   CLUBBERS </font>
+                 <font color="#CDCCCE" face="Times New Roman" font-style="italic">   CLUBBERS </font>
                 </a>
             </div>
 
-            <div class="collapse navbar-collapse" id="app-navbar-collapse" style="background-color:black;">
+            <div class="collapse navbar-collapse" id="app-navbar-collapse" style="background-color:#151414;">
                 <!-- Left Side Of Navbar -->
                 <ul class="nav navbar-nav">
                     <li><a href="{{ url('/home') }}">
-                       <font color="#319BED"> 
+                       <font color="#858080"> 
 
                         Home
 
@@ -70,7 +70,7 @@
                     </a></li>
                     <li><a href="{{ url('/listevent') }}">
 
-                          <font color="#319BED"> 
+                          <font color="#858080"> 
 
 
                         List Events
@@ -85,12 +85,12 @@
                     @if (Auth::guest())
                         <li><a href="{{ url('/login') }}"> 
 
-                          <font color="#319BED"> 
+                          <font color="#858080"> 
                             Login
                          </font> 
                          </a></li>
                         <li><a href="{{ url('/register') }}">
-                           <font color="#319BED"> 
+                           <font color="#858080"> 
                            
                             Register
                            </font>
@@ -98,14 +98,14 @@
                     @else
                     <li><a href="{{ url('/profile') }}">
 
-                          <font color="#319BED"> 
+                          <font color="#858080"> 
                         Profile
                       </font>
                     </a></li>
 
                      <li><a href="{{ url('/addevent') }}">
 
-                    <font color="#319BED"> 
+                    <font color="#858080"> 
                         Add Event
                         </font>
 
@@ -116,7 +116,7 @@
 
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                               <font color="#319BED"> 
+                               <font color="#858080"> 
 
                                 {{ Auth::user()->name }} 
 

@@ -41,11 +41,11 @@ margin: 10;
 
 
 
-<div class="panel-heading" align="center" style="background-color:black;" >
+<div class="panel-heading" align="center" style="background-color:#43524B;" >
 
                    
                     <h1 align="center"> 
-                    <font color="#319BED">
+                    <font color="#858080">
                         PROFILE
 
                     </font>
@@ -57,7 +57,7 @@ margin: 10;
 <form action="{{ url('/updateprofile') }}">
 
 
-<div id="tab"class="col-sm-12" style="background-color:black;">
+<div id="tab"class="col-sm-12" style="background-color:#DDD6EA;">
     
     <table align="center">
         <tr>
@@ -66,34 +66,65 @@ margin: 10;
 </td>
         <tr>
             <td>
-                  <label for="name" class="col-md-4 control-label">Name</label>
+                  <label for="name" class="col-md-4 control-label">
+              <font color="#0C0D10">
+
+                    Name
+
+</font>
+                </label>
             </td>
             <td>
+                <font color="#0C0D10">
                 {{ $users->name }}
+
+            </font>
             </td>
         </tr>
         <tr>
             <td>
-                 <label for="email" class="col-md-4 control-label">Email</label>
+                 <label for="email" class="col-md-4 control-label">
+
+                <font color="#0C0D10">
+                    Email
+
+                </font>
+                </label>
             </td>
             <td>
+                <font color="#0C0D10">
                 {{ $users->email }}
+            </font>
             </td>
         </tr>
         <tr>
             <td>
-                 <label for="address" class="col-md-4 control-label">Address</label>
+                 <label for="address" class="col-md-4 control-label">
+
+                 <font color="#0C0D10">
+                    Address
+                 </font>
+                </label>
             </td>
             <td>
+                <font color="#0C0D10">
                 {{ $users->address }}
+            </font>
             </td>
         </tr>
         <tr>
             <td>
-                 <label for="phoneNo" class="col-md-4 control-label">phone Number</label>
+                 <label for="phoneNo" class="col-md-4 control-label">
+                <font color="#0C0D10">
+              
+                    phone Number
+</font>
+                </label>
             </td>
             <td>
+                <font color="#0C0D10">
                 {{ $users->phnumber }}
+            </font>
             </td>
         </tr>
 

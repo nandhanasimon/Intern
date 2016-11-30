@@ -5,9 +5,9 @@
     <div class="row">
         <div class="col-md-10 col-md-offset-1">
             <div class="panel panel-default">
-                <div class="panel-heading" align="center" style="background-color:black;" >
+                <div class="panel-heading" align="center" style="background-color:#43524B;" >
 
-                   <font color="#319BED">
+                   <font color="#B1B3B6">
                     All EVENTS
 
                     </font>
@@ -18,7 +18,7 @@
 
                    
                     @foreach($event as $e)
-                        <div class="col-sm-4" style="background-color:black;">
+                        <div class="col-sm-4" style="background-color:#DDD6EA;"align="center">
                             <a href="{{ '/eventdisplay/'.$e->id }}  ">
                             <img src="{{ url('images').'/'. $e->photo}}" alt="Mountain View" style="width:290px;height:290px;"><br>
                             </a>
@@ -27,13 +27,13 @@
                                 <td>
                                     <label for="name" class="col-md-4 control-label">
 
-                                   <font color="white">
+                                   <font color="#201B1B">
                                         Name:</label>
                                     </font>
                                 </td>
                                 <td>
                                     <label for="name" >
-                                     <font color="white">
+                                     <font color="#1D1818">
                                         {{ $e->event_name }}</label>
                                     </font>
                                     <!--class="col-md-4 control-label"-->
@@ -44,7 +44,7 @@
                             <tr>
                                 <td>
                                     <label for="venue" class="col-md-4 control-label">
-                                   <font color="white">
+                                   <font color="#1D1818">
                                         Venue:
                                     </font>
 
@@ -52,7 +52,7 @@
                                 </td>
                                 <td>
                                     <label for="venue" >
-                                  <font color="white">
+                                  <font color="#1D1818">
 
                                         {{ $e->venue }}
                                    </font>
@@ -63,14 +63,14 @@
                                 <td>
                                     <label for="time" class="col-md-4 control-label">
 
-                                     <font color="white">
+                                     <font color="#1D1818">
                                         Time: 
                                     </font>
                                     </label>
                                 </td>
                                 <td>
                                     <label for="time" >
-                                    <font color="white">
+                                    <font color="#1D1818">
                                         {{ $e->start_time }}
                                     </font>
                                     </label>
@@ -80,7 +80,7 @@
                                 <td>
                                     <label for="date" class="col-md-4 control-label">
 
-                                      <font color="white">
+                                      <font color="#1D1818">
                                         Date:
                                        </font>
 
@@ -88,7 +88,7 @@
                                 </td>
                                 <td>
                                     <label for="date" >
-                                     <font color="white">
+                                     <font color="#1D1818">
                                         {{ $e->date }}
                                      </font>
                                     </label>

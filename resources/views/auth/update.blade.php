@@ -30,7 +30,7 @@
 
 <style>
 h1{
-    color: #FBE8E8;
+    color: #858080;
 
 
 }
@@ -47,7 +47,7 @@ th, td {
 /* tr:nth-child(even){background-color: #f2f2f2} */
 
 th {
-    background-color: #FDEDED;
+    background-color: #252530;
     color: #f2f2f2;
     
 }
@@ -57,14 +57,14 @@ td
 }
 </style>
 
-<div class="panel-heading" align="center" style="background-color:black;" >
+<div class="panel-heading" align="center" style="background-color:#151414;" >
 
                    
                     <h1 align="center"> 
-                    <font color="#319BED">
+                   
                         UPDATE
 
-                    </font>
+                    
                     </h1>
                 </div>
 
@@ -75,7 +75,7 @@ td
     
 
 
-  <div id="tab"class="col-sm-12" style="background-color:black;">
+  <div id="tab"class="col-sm-12" style="background-color:#43524B;">
     <table align="center">
         <tr>
             <td>

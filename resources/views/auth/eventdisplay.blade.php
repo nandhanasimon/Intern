@@ -5,6 +5,8 @@
 
 
 
+
+
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
@@ -71,9 +73,21 @@
                           <!-- Trigger the modal with a button -->
                       @if(Auth::check())
                         @if($event->creator_id==Auth::User()->id)
+
                            
                            <a href="{{ url('/updateevent/'.$event->id) }}"><button type="button" class="btn btn-primary" onclick="{{ url('/updateevent') }}" >UPDATE</button></a>
-                          <a href="{{ url('/deleteevent/'.$event->id) }}"><button type="button" class="btn btn-primary" onclick="{{ url('/deleteevent') }}" >DELETE</button></a>
+                          <a href="{{ url('/deleteevent/'.$event->id) }}"><button type="button" class="btn btn-primary" onclick="myFunction()" >DELETE</button></a>
+
+                          <script type="text/javascript">
+
+                            function myFunction() {
+                             confirm("Press a button!");
+                                         }
+                          </script>
+                        
+
+
+                
                         @endif
                       @endif
                       
@@ -126,7 +140,7 @@
         </div>
     </div>
 </div>
-                      
+               </script>              
 
                
 @endsection

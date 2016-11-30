@@ -13,22 +13,26 @@ th, td {
     padding: 8px;
 }
 
-tr:nth-child(even){background-color: #f2f2f2}
+/* tr:nth-child(even){background-color: #f2f2f2} */
 
 th {
-    background-color: #00008B;
+    background-color: #20202C;
     color: #f2f2f2;
     
 }
-td
+td,a
 {
-    color: #00008B ;
+    color:#f2f2f2;
 }
 </style>
+<div class="panel-heading" align="center" style="background-color:#151414;" >
 
 <h1 align="center">LIST OF EVENTS</h1>
+</div>
 
-<table border="5" cellspacing ="12" align ="center" width="600">
+<div id="tab"class="col-sm-12" style="background-color:#43524B;">
+
+   <table border="2" cellspacing ="12" align ="center" width="600">
     <tr>
         <th>Event Name</th>
         <th>Event Venue</th>
@@ -48,6 +52,7 @@ td
     @endforeach
 
 </table>
+</div>
 
 
 @endsection
