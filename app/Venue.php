@@ -10,7 +10,7 @@ class Venue extends Model
     public $table = "venue";
 
 	protected $fillable = [
-        'vname', 'category', 'mobileno', 'address',
+        'vname', 'category', 'mobileno', 'address','city_id',
     ];
 
     /**

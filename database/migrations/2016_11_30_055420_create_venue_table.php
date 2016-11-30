@@ -18,6 +18,8 @@ class CreateVenueTable extends Migration
             $table->integer('mobileno');
             $table->string('category');
             $table->string('address');
+            $table->integer('city_id')->unsigned();
+            $table->foreign('city_id')->references('id')->on('city');
             $table->timestamps();
         });
     }
