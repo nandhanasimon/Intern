@@ -208,6 +208,13 @@ public function storeevent(StoreEventRequest $request)
 
     }
 
+public function deleteevent($id)
+{
+    $event=Events::where("id", $id)->delete();
+
+
+    return redirect('/listevent');
+}
 
 
 

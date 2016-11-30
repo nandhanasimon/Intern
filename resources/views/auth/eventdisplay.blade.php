@@ -71,7 +71,9 @@
                           <!-- Trigger the modal with a button -->
                       @if(Auth::check())
                         @if($event->creator_id==Auth::User()->id)
+                           
                            <a href="{{ url('/updateevent/'.$event->id) }}"><button type="button" class="btn btn-primary" onclick="{{ url('/updateevent') }}" >UPDATE</button></a>
+                          <a href="{{ url('/deleteevent/'.$event->id) }}"><button type="button" class="btn btn-primary" onclick="{{ url('/deleteevent') }}" >DELETE</button></a>
                         @endif
                       @endif
                       

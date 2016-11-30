@@ -47,6 +47,9 @@ Route::get('/updateevent/{num}','HomeController@updateevent');
 
 Route::post('/storeupdateevent/{num}','HomeController@storeupdateevent');
 
+Route::get('/deleteevent/{num}','HomeController@deleteevent');
+
+
 
 
 
