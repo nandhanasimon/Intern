@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 use Auth;
 use Carbon\Carbon;
 use App\User;
+use App\City;
+use App\Venue;
 //use App\Model;
 use App\Guest;
 use Illuminate\Support\Facades\View;
