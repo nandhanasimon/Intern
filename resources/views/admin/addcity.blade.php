@@ -32,7 +32,7 @@ td
 }
 </style>
 
-<div class="panel-heading" align="center" style="background-color:#43524B;" >
+<div class="panel-heading" align="center" style="background-color:#292259;" >
 
 <h1 align="center">
 

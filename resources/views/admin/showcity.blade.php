@@ -3,9 +3,15 @@
 @section('content')
 
 <style>
+
+h1{
+     color:#f2f2f2;
+
+}
 table {
     border-collapse: collapse;
-    width: 80%;
+    width: 30%;
+    background-color: #D3E2E4;
 }
 
 th, td {
@@ -16,34 +22,37 @@ th, td {
 /* tr:nth-child(even){background-color: #f2f2f2} */
 
 th {
-    background-color: #20202C;
+    background-color: #666060;
     color: #f2f2f2;
+    text-align: center;
     
 }
 td,a
 {
-    color:#f2f2f2;
+    color:#0D0707;
 }
 </style>
-<div class="panel-heading" align="center" style="background-color:#151414;" >
+<div class="panel-heading" align="center" style="background-color:#292259;" >
 
 <h1 align="center">LIST OF CITIES</h1>
 </div>
 
-<div id="tab"class="col-sm-12" style="background-color:#43524B;">
+<div id="tab"class="col-sm-12" style="background-color:#DFE2EB;">
 
    <table border="2" cellspacing ="12" align ="center" width="600">
     <tr>
+         <th>City Number</th>
         <th>City Name</th>
-        
+       
      </tr>
      <tr>
         @foreach($cit as $c)
 
-        
+         <td>{{ $c->id }}</td>
+    
         
        <td>{{ $c->city_name }}</td>
-    
+       
        
     </tr>
     @endforeach

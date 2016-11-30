@@ -53,21 +53,21 @@
                 </button>
 
                 <!-- Branding Image -->
-                <a class="navbar-brand" href="{{ url('/') }}">
+                <a class="navbar-brand">
                  <font color="#CDCCCE" face="Times New Roman" font-style="italic">   CLUBBERS </font>
                 </a>
             </div>
 
-            <div class="collapse navbar-collapse" id="app-navbar-collapse" style="background-color:#151414;">
+            <div class="collapse navbar-collapse" id="app-navbar-collapse" style="background-color:#292259;">
                 <!-- Left Side Of Navbar -->
                 <ul class="nav navbar-nav">
-                    <li><a href="{{ url('/home') }}">
-                       <font color="#858080"> 
-
-                        Home
-
-                         </font>
-                    </a></li>
+                   <!--  <li><a href="{{ url('/home') }}">
+                      <font color="#858080"> 
+                      
+                       Home
+                      
+                        </font>
+                   </a></li> -->
                     
 
 
