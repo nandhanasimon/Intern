@@ -5,6 +5,7 @@ use Auth;
 use Carbon\Carbon;
 use App\User;
 use App\Guest;
+use App\City;
 use Illuminate\Support\Facades\View;
 use App\Events;
 use App\Http\Requests\UpdateRequest;
@@ -34,6 +35,13 @@ class HomeController extends Controller
     
         $event= Events::all();
         return view('welcome',compact('event')); 
+    }
+
+    public function homepage()
+    {
+        $event= Events::all();
+        $cit= City::all();
+        return view('homepage',compact('event','cit'));
     }
 
     public function bookevent(BookEventRequest $request , $id)

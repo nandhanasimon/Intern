@@ -37,7 +37,7 @@ td,a
 <h1 align="center">LIST OF CITIES</h1>
 </div>
 
-<div id="tab"class="col-sm-12" style="background-color:#DFE2EB;">
+<div id="tab" class="col-sm-12" style="background-color:#DFE2EB;">
 
    <table border="2" cellspacing ="12" align ="center" width="600">
     <tr>
