@@ -85,7 +85,7 @@
                             <ul class="dropdown-menu" role="menu">
                                 <li><a href="{{ url('/addcity') }}"><i class="fa fa-btn fa-sign-out"></i> ADD CITY</a></li>
 
-                                <li><a href="{{ url('#') }}"><i class="fa fa-btn fa-sign-out"></i> SHOW CITY</a></li>
+                                <li><a href="{{ url('/showsity') }}"><i class="fa fa-btn fa-sign-out"></i> SHOW CITY</a></li>
 
                             </ul>
                         </li>
@@ -106,7 +106,7 @@
                             <ul class="dropdown-menu" role="menu">
                                 <li><a href="{{ url('/addvenue') }}"><i class="fa fa-btn fa-sign-out"></i> ADD VENUE</a></li>
 
-                                <li><a href="{{ url('#') }}"><i class="fa fa-btn fa-sign-out"></i> SHOW VENUE</a></li>
+                                <li><a href="{{ url('/showvenue') }}"><i class="fa fa-btn fa-sign-out"></i> SHOW VENUE</a></li>
 
                             </ul>
                         </li>
