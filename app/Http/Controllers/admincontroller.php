@@ -22,12 +22,19 @@ class admincontroller extends Controller
 
         echo "<br><br>";
         echo "<pre>";
-    	$cit = new City;
-
-    	$cit->city_name=$request->name;
-    	$cit->save();
-    	//return "saved";
-
+        $cit=new City;
+        $name=$request->name; 
+        if(City::where("city_name",$name )->first())
+        {
+            return redirect('addcity');
+        }
+        else
+        {
+            $cit->city_name=$request->name;
+            $cit->save();
+            return redirect('showcity');
+           
+        }
     }
 
  public function showcity()
@@ -56,6 +63,7 @@ class admincontroller extends Controller
     	$t->address=$request->address;
 
     	$t->save();
+        return redirect('/showvenue');
 
     }
     public function showvenue()
