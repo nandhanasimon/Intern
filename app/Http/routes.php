@@ -52,6 +52,7 @@ Route::get('/deleteevent/{num}','HomeController@deleteevent');
 Route::get('/addcity','admincontroller@addcity');
 
 Route::post('/storecity','admincontroller@storecity');
+Route::get('/showcity','admincontroller@showcity');
 
 
 

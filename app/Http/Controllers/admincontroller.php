@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\City;
 use App\Venue;
-//use Illuminate\Support\Facades\View;
+use Illuminate\Support\Facades\View;
 
 class admincontroller extends Controller
 {
@@ -20,11 +20,23 @@ class admincontroller extends Controller
     public function storecity(Request $request)
     {
 
-    	$city = new City;
+        echo "<br><br>";
+        echo "<pre>";
+    	$cit = new City;
 
-    	$city->city_name=$request->name;
-    	$city->save();
-    	return "saved";
+    	$cit->city_name=$request->name;
+    	$cit->save();
+    	//return "saved";
 
     }
+
+ public function showcity()
+    {
+       $cit= City::all();
+        return View::make('admin.showcity',compact('cit'));
+
+    }
+
+
+
 }

@@ -76,14 +76,30 @@
 
                            
                            <a href="{{ url('/updateevent/'.$event->id) }}"><button type="button" class="btn btn-primary" onclick="{{ url('/updateevent') }}" >UPDATE</button></a>
-                          <a href="{{ url('/deleteevent/'.$event->id) }}"><button type="button" class="btn btn-primary" onclick="myFunction()" >DELETE</button></a>
-
+                          <!--  <a href="{{ url('/deleteevent/'.$event->id) }}"> 
+                          
+                           -->
+                            <button type="button" class="btn btn-primary"onclick="ConfirmDelete()" >DELETE</button>
+<!--                             </a> 
+ -->
                           <script type="text/javascript">
 
-                            function myFunction() {
-                             confirm("Press a button!");
-                                         }
-                          </script>
+                            function ConfirmDelete()
+
+                               {
+
+                            var ans = confirm('Are you sure to Delete this Record !!');
+
+                               if (ans == true || ans == 1)
+
+                                   { 
+
+                                     window.location.href = "{{ url('/deleteevent/'.$event->id) }}";
+
+                                           }
+
+                                 }    
+                                         </script>
                         
 
 
