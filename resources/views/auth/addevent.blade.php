@@ -104,6 +104,21 @@ td
         }
 
 
+        var dateTB = {
+          numberOfMonths: 1,
+         // stepMonths: 2, 
+          changeMonth: false,
+          changeYear: false,
+          dateFormat:'dd/mm/yy', 
+          minDate: 0,
+          maxDate: '+45D'         
+        };
+        $("#datepicker3").datepicker(pickerOpts);  
+          
+    });
+
+
+
 
       }
 

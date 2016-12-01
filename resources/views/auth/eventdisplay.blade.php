@@ -7,6 +7,8 @@
 
 
 
+
+
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
@@ -106,8 +108,36 @@
                 
                         @endif
                       @endif
-                      
-                        <button type="button" class="btn btn-primary"  data-toggle="modal" data-target="#myModal">BOOK</button>
+
+
+
+        <script type="text/javascript">
+  function validate()
+    {
+      var NameTB = document.getElementById("name");
+
+      var namefilter= new RegExp("^[a-zA-Z\ ]+$","g");
+      if(!namefilter.test(NameTB.value))
+        {
+          alert("PLEASE ENTER A PROPER NAME!");
+          return false;
+        }
+
+        var PhoneTB = document.getElementById("number");
+
+      var phonefilter = new RegExp("[0-9]{10}$");
+
+      if(!phonefilter.test(PhoneTB.value))
+        {
+          alert("NOT A PHONE NUMBER!");
+          PhoneTB.focus();
+          return false;
+        }
+
+            
+            }   
+            </script>       
+                        <button type="button" class="btn btn-primary"  data-toggle="modal" data-target="#myModal" >BOOK</button>
                       
 
                       <!-- Modal -->
@@ -116,7 +146,7 @@
                        
                           <!-- Modal content-->
                           <div class="modal-content">
-                            <div class="modal-header">
+                            <div class="modal-header" style="background-color: #7F0505;">
                               <button type="button" class="close" data-dismiss="modal">&times;</button>
                               <h4 class="modal-title">Book Event</h4>
                             </div>
@@ -141,7 +171,7 @@
                                       <option value="5">5</option>
                                   </select>
                                   <br/> <br>
-                                  <input type="submit" name="book" value="Book" />
+                                  <input type="submit" name="book" value="Book" onclick="return validate()" />
                               </form>  
                             </div>
                             <!-- <div class="modal-footer">
