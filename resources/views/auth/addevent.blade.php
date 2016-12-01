@@ -2,6 +2,7 @@
 
 
 @section('content')
+<script type="text/javascript" src="js/bootstrap-timepicker.min.js"></script>
 
 @if(count($errors)>0)
 <div class="row">

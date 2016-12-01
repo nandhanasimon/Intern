@@ -5,6 +5,7 @@
     <div class="row">
         <div class="col-md-10 col-md-offset-1">
             <div class="panel panel-default">
+                <div class="responsive">
                 <div class="panel-heading" align="center" style="background-color:#43524B;" >
 
                    <font color="#B1B3B6">
@@ -107,13 +108,14 @@
                                 </td>
                             </tr>
                         </div>
-                            </table>
+                            </table> <br>
 
                         </div>
 
                        
 
                     @endforeach
+                    </div
                    
                    </div>   
                 </div>

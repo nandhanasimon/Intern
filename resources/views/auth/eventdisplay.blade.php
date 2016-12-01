@@ -3,15 +3,6 @@
 @section('content')
 
 
-
-
-
-
-
-
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <div class="container">
     <div class="row">
         <div class="col-md-10 col-md-offset-1">
@@ -35,10 +26,9 @@
                                         <label for="name" >{{ $event->event_name }}</label>
                                      <!--class="col-md-4 control-label"-->
                                     </td>
+                                     </tr>
 
-                                </tr>
-
-                                <tr>
+                                   <tr>
                                     <td>
                                         <label for="venue" class="col-md-4 control-label">Venue</label>
                                     </td>
