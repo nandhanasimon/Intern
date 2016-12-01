@@ -23,7 +23,12 @@
                    
                         <div class="col-sm-4" style="background-color:#DDD6EA;"align="center">
                             <a href="{{ '/eventdisplay/'.$e->id }}  ">
-                            <img class="img-responsive" src="{{ url('images').'/'. $e->photo}}" alt="Mountain View" style="width:290px;height:290px;"><br>
+
+                                <div class="thumbnail">
+                            <img class="img-responsive" src="{{ url('images').'/'. $e->photo}}" alt="Mountain View" style="width:290px;height:290px;">
+                                </div>
+
+                            <br>
                             </a>
                             <table  cellpadding="10">
                                 <div class="caption">
