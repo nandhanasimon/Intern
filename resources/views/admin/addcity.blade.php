@@ -32,6 +32,22 @@ td
 }
 </style>
 
+<script type="text/javascript">
+  function validate()
+    {
+      var NameTB = document.getElementById("name");
+
+      var namefilter= new RegExp("^[a-zA-Z\ ]+$","g");
+      if(!namefilter.test(NameTB.value))
+        {
+          alert("Not a valid City!");
+          return false;
+        }
+      }
+      </script>
+
+
+
 <div class="panel-heading" align="center" style="background-color:#292259;" >
 
 <h1 align="center">
@@ -66,7 +82,7 @@ td
         
              <tr>
             <td>
-                 <button type="submit" class="btn btn-primary" align="center">
+                 <button type="submit" class="btn btn-primary" align="center" onclick="return validate()">
                     Add</button>
             </td>
             

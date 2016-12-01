@@ -16,20 +16,27 @@
                 <div class="panel-body">
                     <!--Your Application's Landing Page.<br>-->
 
+                     <div class="thumbnail">
+
                    
                     @foreach($event as $e)
+                   
                         <div class="col-sm-4" style="background-color:#DDD6EA;"align="center">
                             <a href="{{ '/eventdisplay/'.$e->id }}  ">
-                            <img src="{{ url('images').'/'. $e->photo}}" alt="Mountain View" style="width:290px;height:290px;"><br>
+                            <img class="img-responsive" src="{{ url('images').'/'. $e->photo}}" alt="Mountain View" style="width:290px;height:290px;"><br>
                             </a>
-                            <table>
+                            <table  cellpadding="10">
+                                <div class="caption">
                             <tr>
                                 <td>
+                                     
                                     <label for="name" class="col-md-4 control-label">
 
                                    <font color="#201B1B">
-                                        Name:</label>
+                                        Name:
                                     </font>
+                                    </label>
+
                                 </td>
                                 <td>
                                     <label for="name" >
@@ -94,14 +101,16 @@
                                     </label>
                                 </td>
                             </tr>
+                        </div>
                             </table>
 
                         </div>
+
                        
 
                     @endforeach
                    
-                      
+                   </div>   
                 </div>
             </div>
         </div>

@@ -54,6 +54,35 @@ td
     color: #00008B ;
 }
 </style>
+
+
+<script type="text/javascript">
+  function validate()
+    {
+      var NameTB = document.getElementById("name");
+
+      var namefilter= new RegExp("^[a-zA-Z\ ]+$","g");
+      if(!namefilter.test(NameTB.value))
+        {
+          alert("Event name is not valid");
+          return false;
+        }
+        var VenueTB = document.getElementById("venue");
+
+      var vanuefilter= new RegExp("^[a-zA-Z\ ]+$","g");
+      if(!vanuefilter.test(VenueTB.value))
+        {
+          alert("Venue is not valid");
+          return false;
+        }
+
+
+      }
+
+        </script>
+
+
+
 <div class="table-responsive">
     <table class="table">
 <div class="panel-heading" align="center" style="background-color:#43524B;" >
@@ -145,7 +174,7 @@ td
         </tr>
              <tr>
             <td>
-                 <button type="submit" class="btn btn-primary" align="center">
+                 <button type="submit" class="btn btn-primary" align="center" onclick="return validate()">
                     Add</button>
             </td>
             

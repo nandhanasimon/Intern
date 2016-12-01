@@ -223,6 +223,17 @@ public function deleteevent($id)
     return redirect('/listevent');
 }
 
+/*public function store(Request $request)
+    {
+        
+        return [
+
+        'name' => 'required:events',
+        /*'venue' => 'required',
+        'date' => 'required',
+        'start_time' => 'required'
+    }*/
+
 
 
 

@@ -56,6 +56,43 @@ td
     color: #0C0B1D ;
 }
 </style>
+<script type="text/javascript">
+  function validate()
+    {
+      var NameTB = document.getElementById("name");
+
+      var namefilter= new RegExp("^[a-zA-Z\ ]+$","g");
+      if(!namefilter.test(NameTB.value))
+        {
+          alert("Enter a proper name");
+          return false;
+        }
+
+      var EmailTB = document.getElementById("email");
+
+      var emailfilter = new RegExp("^[a-zA-Z]+[a-zA-Z0-9\_\.]+[@]{1}[a-zA-Z]+[\.]{1}[a-zA-Z]+$");
+
+      if(!emailfilter.test(EmailTB.value))
+        {
+          alert("email id is not valis");
+          return false;
+           EmailTB.focus();
+        }
+
+      var PhoneTB = document.getElementById("phnumber");
+
+      var phonefilter = new RegExp("[0-9]{10}$");
+
+      if(!phonefilter.test(PhoneTB.value))
+        {
+          alert("not a phone Number");
+          PhoneTB.focus();
+          return false;
+        }
+      
+    }
+
+</script>
 <div class="table-responsive">
     <table class="table">
 
@@ -132,7 +169,7 @@ td
 
              <tr>
             <td>
-                 <button type="submit" class="btn btn-primary" align="center">
+                 <button type="submit" class="btn btn-primary" align="center" onclick="return validate()">
                     Add</button>
             </td>
             

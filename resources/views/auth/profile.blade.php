@@ -63,7 +63,7 @@ margin: 10;
     <table align="center">
         <tr>
             <td>
-<img  src="{{ url('images').'/'. $users->image}}" alt="hookah-laravel" height="100" width="100">
+<img  src="{{ url('images').'/'. $users->image}}" class="img-circle" alt="hookah-laravel" height="100" width="100">
 </td>
         <tr>
             <td>
