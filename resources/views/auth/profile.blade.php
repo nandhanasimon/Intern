@@ -39,7 +39,6 @@ margin: 10;
 
 </style>
 
-<div class="table-responsive">
 
 <div class="panel-heading" align="center" style="background-color:#43524B;" >
 
@@ -58,6 +57,10 @@ margin: 10;
 
 
 <div id="tab"class="col-sm-12" style="background-color:#DDD6EA;">
+
+    <div class="table-responsive">
+    <table class="table">
+
     
     <table align="center">
         <tr>
@@ -136,11 +139,16 @@ margin: 10;
             </td>
             
         </tr>        
-</div>
+
     </table>
 
-</form>
+</table>
 </div>
+</div>
+
+</form>
+
+
  
 
 @endsection
