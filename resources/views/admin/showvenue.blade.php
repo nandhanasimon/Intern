@@ -45,6 +45,8 @@ td,a
         <th>MOBILE NUMBER</th>
         <th>CATEGORY</th>
         <th>VENUE ADDRESS</th>
+        <th>VENUE CITY </th>
+
      </tr>
      <tr>
         @foreach($ven as $v)
@@ -55,6 +57,7 @@ td,a
        <td>{{ $v->mobileno }}</td>
        <td>{{ $v->category }}</td>
        <td>{{ $v->address }}</td>
+       <td>{{ $v->city_name }}</td>
 
 
     

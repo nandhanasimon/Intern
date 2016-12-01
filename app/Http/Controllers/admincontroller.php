@@ -7,7 +7,9 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\City;
 use App\Venue;
+use DB;
 use Illuminate\Support\Facades\View;
+use Illuminate\Support\Facades\Input;
 
 class admincontroller extends Controller
 {
@@ -49,18 +51,24 @@ class admincontroller extends Controller
 
     public function addvenue()
     {
-    	return view('admin.addvenue');
+
+    $cit = City::lists('city_name','id');
+
+    	return view('admin.addvenue',compact('cit'));
     }
 
     public function storevenue(Request $request)
     {
-    	echo "<br><br>";
-        echo "<pre>";
     	$t = new Venue;
+        //dd($request->all());
+        //$id= City::where('city_name',$request->city)->pluck('id');
+        //dd($id);;
+        //$t->city_id=$id;
     	$t->vname=$request->name;
     	$t->mobileno=$request->number;
     	$t->category=$request->category;
     	$t->address=$request->address;
+        $t->city_id=$request->city;
 
     	$t->save();
         return redirect('/showvenue');
@@ -69,7 +77,10 @@ class admincontroller extends Controller
     public function showvenue()
     {
     	//return "SHOW CITY PAGE";
-       $ven= Venue::all();
+       $ven= Venue::orderBy('vname')->join('city','city.id', '=', 'venue.city_id')
+                                    ->select('city.city_name', 'vname', 'mobileno', 'category', 'address'  )->get();
+       //dd($ven);
+      // $cit=City::where("id",$ven->city_id)->get();
        return View::make('admin.showvenue',compact('ven'));
 
     }

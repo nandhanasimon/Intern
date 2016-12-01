@@ -142,6 +142,28 @@ td
                  <input id="address" type="text" class="form-control" name="address" placeholder="enter the venue address">
             </td>
         </tr>
+
+
+
+        <tr>
+            <td>
+                  <label for="address" class="col-md-4 control-label">
+                      <font color="#0C0D10">
+                    Venue City
+
+                      </font>
+                 </label>
+            </td>
+                    <td>
+
+              {{ Form::select('city', $cit , Input::old('city_name')) }}
+                      
+                  
+
+                  </td>
+        </tr>
+
+
              <tr>
             <td>
                  <button type="submit" class="btn btn-primary" align="center" onclick="return validate()">

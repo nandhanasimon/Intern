@@ -88,7 +88,7 @@
                                 <li><a href="{{ url('/showcity') }}"><i class="fa fa-btn fa-sign-out"></i> SHOW CITY</a></li>
 
                             </ul>
-                        </li>s
+                        </li>
 
 
 
