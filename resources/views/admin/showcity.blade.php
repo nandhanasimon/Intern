@@ -41,17 +41,29 @@ td,a
 
    <table border="2" cellspacing ="12" align ="center" width="600">
     <tr>
-         <th>City Number</th>
+        <th>City Number</th>
         <th>City Name</th>
+        <th>Action:Update</th>
+        <th>Action:Delete</th>
        
      </tr>
      <tr>
         @foreach($cit as $c)
 
-         <td>{{ $c->id }}</td>
-    
-        
-       <td>{{ $c->city_name }}</td>
+        <td>
+            {{ $c->id }}
+        </td>
+        <td>
+            {{ $c->city_name }}
+        </td>
+        <td>
+           <a href="{{ url('showupdatecity/'. $c->id)}}">Change</a>
+        </td>
+        <td>
+            <a href="{{ url('deletecity/'. $c->id)}}" >Delete</a>
+
+        </td>
+
        
        
     </tr>

@@ -21,9 +21,6 @@ class admincontroller extends Controller
 
     public function storecity(Request $request)
     {
-
-        echo "<br><br>";
-        echo "<pre>";
         $cit=new City;
         $name=$request->name; 
         if(City::where("city_name",$name )->first())
@@ -35,19 +32,15 @@ class admincontroller extends Controller
             $cit->city_name=$request->name;
             $cit->save();
             return redirect('showcity');
-           
         }
     }
 
- public function showcity()
+    public function showcity()
     {
-    	//return "SHOW CITY PAGE";
        $cit= City::all();
        return View::make('admin.showcity',compact('cit'));
 
     }
-
-
 
     public function addvenue()
     {
@@ -60,11 +53,7 @@ class admincontroller extends Controller
     public function storevenue(Request $request)
     {
     	$t = new Venue;
-        //dd($request->all());
-        //$id= City::where('city_name',$request->city)->pluck('id');
-        //dd($id);;
-        //$t->city_id=$id;
-    	$t->vname=$request->name;
+        $t->vname=$request->name;
     	$t->mobileno=$request->number;
     	$t->category=$request->category;
     	$t->address=$request->address;
@@ -76,17 +65,52 @@ class admincontroller extends Controller
     }
     public function showvenue()
     {
-    	//return "SHOW CITY PAGE";
        $ven= Venue::orderBy('vname')->join('city','city.id', '=', 'venue.city_id')
-                                    ->select('city.city_name', 'vname', 'mobileno', 'category', 'address'  )->get();
-       //dd($ven);
-      // $cit=City::where("id",$ven->city_id)->get();
+                                    ->select('city.city_name', 'vname', 'mobileno', 'category', 'address','venue.id'  )->get();
+       
        return View::make('admin.showvenue',compact('ven'));
 
     }
 
+    public function showupdatecity($id)
+    {
+        $city=City::where('id',$id)->first();
+        return view('admin.updatecity',compact('id','city'));
+    }
+    
+    public function updatecity(Request $request, $id) 
+    {
+        $city=City::where("id",$id)->first();
+        $city->city_name=$request->name;
+        $city->save();
+        return redirect('/');
+    }
 
+    public function deletecity($id)
+    {
+        City::where("id",$id)->delete();
+        return redirect('/');
+    }
 
+    public function showupdatevenue($id)
+    {
+        $ven=Venue::where('id',$id)->first();
+        $cit = City::lists('city_name','id');
+        return view('admin.updatevenue',compact('id','cit','ven'));
+    }
+    
+    public function updatevenue(Request $request, $id) 
+    {
+        $venue=Venue::where("id",$id)->first();
+        $venue=Venue::update($request)->save();
+        return redirect('/');
+    }
+
+    public function deletevenue($id)
+    {
+        Venue::where("id",$id)->delete();
+        return redirect('/');
+    }
 
 
 
