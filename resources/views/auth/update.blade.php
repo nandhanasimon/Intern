@@ -64,7 +64,7 @@ td
       var namefilter= new RegExp("^[a-zA-Z\ ]+$","g");
       if(!namefilter.test(NameTB.value))
         {
-          alert("Enter a proper name");
+          alert("PLEASE ENTER A PROPER NAME!");
           return false;
         }
 
@@ -74,7 +74,7 @@ td
 
       if(!emailfilter.test(EmailTB.value))
         {
-          alert("email id is not valis");
+          alert("INVALID EMAIL ID!");
           return false;
            EmailTB.focus();
         }
@@ -85,10 +85,39 @@ td
 
       if(!phonefilter.test(PhoneTB.value))
         {
-          alert("not a phone Number");
+          alert("NOT A PHONE NUMBER!");
           PhoneTB.focus();
           return false;
         }
+
+
+        var photoTB = document.getElementById("file").value;
+         /*var photofilter= new RegExp("^[a-zA-Z\ ]+$","g");*/
+      if(photoTB == '')
+        {
+          alert("PLEASE SELECT A FILE!");
+          return false;
+        }
+
+        else
+        {
+          var extension = photoTB.substring(photoTB.lastIndexOf('.') +1).toLowerCase();
+          if(extension == "jpg" || extension == "png" || extension == "gif")
+
+          {
+           /* alert("file format is not valid");
+            return false;*/
+          }
+
+          else
+          {
+            alert("INVALID FILE FORMAT!");
+            document.getElementById("file").value = '';
+            return false;
+          }
+
+        }
+
       
     }
 

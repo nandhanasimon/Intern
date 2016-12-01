@@ -152,7 +152,7 @@ public function storeevent(StoreEventRequest $request)
         echo "<pre>";
         $event->event_name = $request->name;
         $event->venue = $request->venue;
-        $event->date = Carbon::createFromFormat('d/m/Y', $request->date)->toDateString();
+        $event->date = $request->date;
         $event->start_time = $request->start_time;
 
         $filepath=public_path('/images/');

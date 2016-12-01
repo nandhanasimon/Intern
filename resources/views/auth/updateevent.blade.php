@@ -53,6 +53,62 @@ td
 </style>
 
 
+<script type="text/javascript">
+  function validate()
+    {
+      var NameTB = document.getElementById("name");
+
+      var namefilter= new RegExp("^[a-zA-Z\ ]+$","g");
+      if(!namefilter.test(NameTB.value))
+        {
+          alert("EVENT NAME IS NOT VALID");
+          return false;
+        }
+        var VenueTB = document.getElementById("venue");
+
+      var vanuefilter= new RegExp("^[a-zA-Z\ ]+$","g");
+      if(!vanuefilter.test(VenueTB.value))
+        {
+          alert("VENUE IS NOT VALID");
+          return false;
+        }
+
+     
+
+        var photoTB = document.getElementById("photo").value;
+         /*var photofilter= new RegExp("^[a-zA-Z\ ]+$","g");*/
+      if(photoTB == '')
+        {
+          alert("PLEASE SELECT A FILE");
+          return false;
+        }
+
+        else
+        {
+          var extension = photoTB.substring(photoTB.lastIndexOf('.') +1).toLowerCase();
+          if(extension == "jpg" || extension == "png" || extension == "gif")
+
+          {
+           /* alert("file format is not valid");
+            return false;*/
+          }
+
+          else
+          {
+            alert("INVALID FILE FORMAT");
+            document.getElementById("photo").value = '';
+            return false;
+          }
+
+        }
+
+
+
+      }
+
+        </script>
+
+
 
 <h1 align="center">UPDATE EVENT DETAILS</h1>
 <form method="post" action="{{ url('/storeupdateevent/'.$e->id) }}" enctype="multipart/form-data">
@@ -80,7 +136,8 @@ td
                  <label for="date" class="col-md-4 control-label">Date</label>
             </td>
             <td>
-                {{ Form::text('date', "", array('id' => 'datepicker')) }}
+              <input id="date" type="date" class="form-control" name="date" placeholder="Date">
+               <!--  {{ Form::text('date', "", array('id' => 'datepicker')) }} -->
 
                  <!--{{ $e->date }}
                  <input id="datepicker" type="text" class="form-control" name="date" placeholder="enter the date">-->
@@ -105,7 +162,7 @@ td
         </tr>
              <tr>
             <td>
-                 <button type="submit" class="btn btn-primary" align="center">
+                 <button type="submit" class="btn btn-primary" align="center" onclick="return validate()">
                     Add</button>
             </td>
             
