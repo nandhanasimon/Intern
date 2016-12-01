@@ -140,7 +140,9 @@ td
           </label>
             </td>
             <td>
-                {{ Form::text('date', '', array('id' => 'datepicker')) }}
+
+              <input type="date"/>
+                <!-- {{ Form::text('date', '', array('id' => 'datepicker')) }} -->
 
                  <!--<input id="datepicker" type="text" class="form-control" name="date" placeholder="enter the date">-->
             </td>

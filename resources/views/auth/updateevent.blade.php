@@ -53,6 +53,32 @@ td
 </style>
 
 
+<script type="text/javascript">
+  function validate()
+    {
+      var NameTB = document.getElementById("name");
+
+      var namefilter= new RegExp("^[a-zA-Z\ ]+$","g");
+      if(!namefilter.test(NameTB.value))
+        {
+          alert("Event name is not valid");
+          return false;
+        }
+        var VenueTB = document.getElementById("venue");
+
+      var vanuefilter= new RegExp("^[a-zA-Z\ ]+$","g");
+      if(!vanuefilter.test(VenueTB.value))
+        {
+          alert("Venue is not valid");
+          return false;
+        }
+
+
+      }
+
+        </script>
+
+
 
 <h1 align="center">UPDATE EVENT DETAILS</h1>
 <form method="post" action="{{ url('/storeupdateevent/'.$e->id) }}" enctype="multipart/form-data">
@@ -80,7 +106,8 @@ td
                  <label for="date" class="col-md-4 control-label">Date</label>
             </td>
             <td>
-                {{ Form::text('date', "", array('id' => 'datepicker')) }}
+              <input type="date"/>
+               <!--  {{ Form::text('date', "", array('id' => 'datepicker')) }} -->
 
                  <!--{{ $e->date }}
                  <input id="datepicker" type="text" class="form-control" name="date" placeholder="enter the date">-->
@@ -105,7 +132,7 @@ td
         </tr>
              <tr>
             <td>
-                 <button type="submit" class="btn btn-primary" align="center">
+                 <button type="submit" class="btn btn-primary" align="center" onclick="return validate()">
                     Add</button>
             </td>
             
