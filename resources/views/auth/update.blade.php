@@ -64,7 +64,7 @@ td
       var namefilter= new RegExp("^[a-zA-Z\ ]+$","g");
       if(!namefilter.test(NameTB.value))
         {
-          alert("PLEASE ENTER A PROPER NAME!");
+          alert("Please enter only characters");
           return false;
         }
 
@@ -74,7 +74,7 @@ td
 
       if(!emailfilter.test(EmailTB.value))
         {
-          alert("INVALID EMAIL ID!");
+          alert("Invalid email ID.");
           return false;
            EmailTB.focus();
         }
@@ -85,7 +85,7 @@ td
 
       if(!phonefilter.test(PhoneTB.value))
         {
-          alert("NOT A PHONE NUMBER!");
+          alert("Phone number must have 10 digit");
           PhoneTB.focus();
           return false;
         }
@@ -95,7 +95,7 @@ td
          /*var photofilter= new RegExp("^[a-zA-Z\ ]+$","g");*/
       if(photoTB == '')
         {
-          alert("PLEASE SELECT A FILE!");
+          alert("Select a file.");
           return false;
         }
 
@@ -111,7 +111,7 @@ td
 
           else
           {
-            alert("INVALID FILE FORMAT!");
+            alert("Invalid format");
             document.getElementById("file").value = '';
             return false;
           }
@@ -156,7 +156,7 @@ td
                   </label>
             </td>
             <td>
-                 <input id="name" type="text" class="form-control" name="name" value="{{ old('name') }}">
+                 <input id="name" type="text" class="form-control" name="name" value="{{ $user->name }}">
             </td>
         </tr>
         <tr>
@@ -164,7 +164,7 @@ td
                  <label for="email" class="col-md-4 control-label">Email</label>
             </td>
             <td>
-                 <input id="email" type="text" class="form-control" name="email" value="{{ old('email') }}">
+                 <input id="email" type="text" class="form-control" name="email" value="{{ $user->email }}">
             </td>
         </tr>
         <tr>
@@ -172,7 +172,7 @@ td
                  <label for="address" class="col-md-4 control-label">Address</label>
             </td>
             <td>
-                 <input id="address" type="text" class="form-control" name="address" value="{{ old('address') }}">
+                 <input id="address" type="text" class="form-control" name="address" value="{{ $user->address }}">
             </td>
         </tr>
         <tr>
@@ -180,7 +180,7 @@ td
                  <label for="phnumber" class="col-md-4 control-label">Phone Number</label>
             </td>
             <td>
-                 <input id="phnumber" type="text" class="form-control" name="phnumber" value="{{ old('phnumber') }}">
+                 <input id="phnumber" type="text" class="form-control" name="phnumber" value="{{ $user->phnumber }}">
             </td>
         </tr>
 
@@ -191,7 +191,7 @@ td
                  <label for="file" class="col-md-4 control-label">Select Image </label>
             </td>
             <td>
-                 <input id="file" type="file"  name="file">
+                 <input id="file" type="file"  name="file" value="{{ old('image') }}">
             </td>
             
         </tr>

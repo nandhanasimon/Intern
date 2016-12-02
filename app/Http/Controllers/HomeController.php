@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use Auth;
 use Carbon\Carbon;
 use App\User;
+use App\Venue;
 use App\Guest;
 use App\City;
 use Illuminate\Support\Facades\View;
@@ -47,36 +48,22 @@ class HomeController extends Controller
     public function bookevent(BookEventRequest $request , $id)
     {
    
-    $guests = new Guest;    //Guest is the Model name
-
-    //$guests->success="false";
-
-        //dd($request->all());
-        echo "<br><br>";
-        echo "<pre>";
+        $guests = new Guest;    //Guest is the Model name
         $guests->guest_name = $request->name;
         $guests->phnumber = $request->number;
         $guests->event_id = $id;
         $guests->no_of_couples=$request->no_of_couples;   //will be passing the names of input feilds
         $guests->save();
         return redirect('listevent');
-
-
-
     }
 
     public function eventdisplay($sid)
     {
-        //return "hai";
-        //$u=Auth::User()->id;
-        //dd($u);
         $event=Events::where("id",$sid)->first();
         return view('auth.eventdisplay',compact('event'));
     }
 
-
-
-        public function profile()
+    public function profile()
     {
         $users=Auth::user();
         return view('auth.profile',compact('users'));
@@ -84,22 +71,14 @@ class HomeController extends Controller
     
     public function update()
     {
-        return view('auth.update');
+        $user=Auth::User();
+        return view('auth.update',compact('user'));
     }
 
     public function store(UpdateRequest $request)
     {
 
-//
         $users = User::where("id", Auth::user()->id)->first();
-        //dd($users->all());
-        //echo "<pre>";
-        //var_dump($users);
-        echo "<br><br>";
-
-        echo "<pre>";
-        
-
         $filepath=public_path('/images/');
 
         $file=$request->file;
@@ -125,7 +104,9 @@ class HomeController extends Controller
 
     public function addevent()
     {
-        return view('auth.addevent');
+        $ven = Venue::lists('vname','id');
+        $city=City::lists('city_name','id');
+        return view('auth.addevent',compact('city','ven'));
     }
 
 
@@ -136,16 +117,8 @@ class HomeController extends Controller
 
     }
 
-
-
-
-public function storeevent(StoreEventRequest $request)
-{
-
-    
-
-
-    //$event = events::where("id", Auth::events()->id)->first();
+    public function storeevent(StoreEventRequest $request)
+    {
         $event = new events;
 
         echo "<br><br>";
@@ -173,7 +146,7 @@ public function storeevent(StoreEventRequest $request)
         $event->save();
         return redirect('listevent');
 
-}
+    }
 
     public function test(){
         return "test";
@@ -182,8 +155,9 @@ public function storeevent(StoreEventRequest $request)
     public function updateevent($id)
     {
         $e=Events::where("id",$id)->first();
-        //dd($e);
-        return view('auth.updateevent',compact('e'));
+        $ven = Venue::lists('vname','id');
+        $city=City::lists('city_name','id');
+        return view('auth.updateevent',compact('e','ven'));
 
     }
     public function storeupdateevent(Request $request,$id)
@@ -215,27 +189,9 @@ public function storeevent(StoreEventRequest $request)
 
     }
 
-public function deleteevent($id)
-{
-    $event=Events::where("id", $id)->delete();
-
-
-    return redirect('/listevent');
-}
-
-/*public function store(Request $request)
+    public function deleteevent($id)
     {
-        
-        return [
-
-        'name' => 'required:events',
-        /*'venue' => 'required',
-        'date' => 'required',
-        'start_time' => 'required'
-    }*/
-
-
-
-
-
+        $event=Events::where("id", $id)->delete();
+        return redirect('/listevent');
+    }
 }

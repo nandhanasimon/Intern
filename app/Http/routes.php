@@ -14,7 +14,6 @@ Route::get('about', function () {
 	return view('pages.about');
 });
 
-//Route::get('/', 'ListController@show');
 Route::auth();
 
 Route::get('/home', 'HomeController@index');
