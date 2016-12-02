@@ -2,7 +2,6 @@
 
 
 @section('content')
-
 <style>
 h1{
     color: #00008B;
@@ -31,6 +30,7 @@ td
     color: #00008B ;
 }
 </style>
+
 
 <script type="text/javascript">
   function validate()

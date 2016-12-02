@@ -169,7 +169,7 @@ class HomeController extends Controller
         $e=Events::where("id",$id)->first();
         $ven = Venue::lists('vname','id');
         $city=City::lists('city_name','id');
-        return view('auth.updateevent',compact('e','ven'));
+        return view('auth.updateevent',compact('e','ven','city'));
 
     }
     public function storeupdateevent(Request $request,$id)
@@ -177,12 +177,22 @@ class HomeController extends Controller
 
         $event=Events::where("id",$id)->first();
 
-        $event->event_name=$request->name;
-        $event->venue=$request->venue;
-        $event->date=$request->date;
-        $event->start_time=$request->start_time;
-        $filepath=public_path('/images/');
+        $cc=City::findOrFail($request->city);
+        $vv=Venue::findOrFail($request->venue);
 
+
+        $event->event_name=$request->name;
+
+        $event->venue=$vv->venue;
+
+        $event->city_name=$cc->city;
+
+
+        $event->date=$request->date;
+
+        $event->start_time=$request->start_time;
+
+        $filepath=public_path('/images/');
         $file=$request->photo;
         if($request->hasfile('photo'))
         { 

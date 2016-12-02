@@ -23,7 +23,7 @@ class admincontroller extends Controller
     {
         $cit=new City;
         $name=$request->name; 
-        if(City::where("city_name",$name )->first())
+        if(City::where('city_name',$name )->first())
         {
             return redirect('addcity');
         }
@@ -75,12 +75,27 @@ class admincontroller extends Controller
     public function showupdatecity($id)
     {
         $city=City::where('id',$id)->first();
+
         return view('admin.updatecity',compact('id','city'));
     }
     
     public function updatecity(Request $request, $id) 
     {
         $city=City::where("id",$id)->first();
+
+        if(City::where('city_name',$request->name )->first())
+        {
+            return redirect('showcity');
+        }
+        else
+        {
+            $cit->city_name=$request->name;
+            $cit->save();
+            return redirect('showcity');
+        }
+
+
+
         $city->city_name=$request->name;
         $city->save();
         return redirect('/');
@@ -104,13 +119,13 @@ class admincontroller extends Controller
         $venue = Venue::findOrFail($id);
         $input = $request->all();
         $venue->fill($input)->save();
-        return redirect('/');
+        return redirect('/showvenue');
     }
 
     public function deletevenue($id)
     {
         Venue::where("id",$id)->delete();
-        return redirect('/');
+        return redirect('/showvenue');
     }
 
 
