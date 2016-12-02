@@ -38,6 +38,15 @@
                                 </tr>
                                 <tr>
                                     <td>
+                                        <label for="city" class="col-md-4 control-label">City</label>
+                                    </td>
+                                    <td>
+                                        <label for="city" >{{ $event->city_name }}</label>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>
                                         <label for="time" class="col-md-4 control-label">Time</label>
                                     </td>
                                     <td>

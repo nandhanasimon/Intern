@@ -119,13 +119,25 @@ class HomeController extends Controller
 
     public function storeevent(StoreEventRequest $request)
     {
+        
+        $cc=City::findOrFail($request->city);
+        $vv=Venue::findOrFail($request->venue);
+        
         $event = new events;
 
-        echo "<br><br>";
-        echo "<pre>";
+        
+
+
+        
+        
         $event->event_name = $request->name;
-        $event->venue = $request->venue;
+
+        $event->venue = $vv->vname;
+
+        $event->city_name= $cc->city_name;
+
         $event->date = $request->date;
+        
         $event->start_time = $request->start_time;
 
         $filepath=public_path('/images/');

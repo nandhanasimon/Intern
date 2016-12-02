@@ -52,12 +52,12 @@ td
    <h1 align="center">
 
       <font color="#858080">
-         ADD CITY 
+         UPDATE CITY 
       </font>
    </h1>
 </div>
 
-<form method="post" action="{{ url('updatecity/'. $id) }}" enctype="multipart/form-data">
+<form method="POST" action="{{ url('updatecity/'. $id) }}" enctype="multipart/form-data">
    <input type="hidden" name="_token" value="{{ csrf_token() }}">
       <div id="tab"class="col-sm-12" style="background-color:#DDD6EA;">
          <table align="center">

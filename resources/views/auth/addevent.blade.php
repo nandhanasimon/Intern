@@ -108,7 +108,7 @@
 				 			<label for="city" class="col-md-4 control-label">City</label>
 						</td>
 						<td>
-				 			{{ Form::select('city', $city , Input::old('city')) }}
+				 			{{ Form::select('city', $city , Input::old('city_name')) }}
 						</td>
 	 				</tr>
 	 				<tr>
