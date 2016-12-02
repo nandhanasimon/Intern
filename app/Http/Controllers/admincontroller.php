@@ -101,8 +101,9 @@ class admincontroller extends Controller
     
     public function updatevenue(Request $request, $id) 
     {
-        $venue=Venue::where("id",$id)->first();
-        $venue=Venue::update($request)->save();
+        $venue = Venue::findOrFail($id);
+        $input = $request->all();
+        $venue->fill($input)->save();
         return redirect('/');
     }
 

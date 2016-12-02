@@ -21,5 +21,10 @@ class Venue extends Model
     protected $hidden = [
        'remember_token',
     ];
+
+    public function city()
+    {
+        return $this->hasOne('App\City');
+    }
     
 }

@@ -156,7 +156,7 @@ td
             </td>
                     <td>
 
-              {{ Form::select('city', $cit , Input::old('city_name')) }}
+                  {{ Form::select('city_id', $cit , Input::old('city_name')) }}
                       
                   
 

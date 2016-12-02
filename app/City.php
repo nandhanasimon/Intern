@@ -20,4 +20,9 @@ class City extends Model
     protected $hidden = [
        'remember_token',
     ];
+
+    public function venue()
+    {
+        return $this->hashMany('App\Venue');
+    }
 }
