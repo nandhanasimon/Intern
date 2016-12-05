@@ -18,6 +18,9 @@ class CreateEventsTable extends Migration
             $table->string('venue');
             $table->string('date');
             $table->string('start_time');
+            $table->string('photo');
+            $table->integer('creator_id');
+            $table->string('city_name');
             $table->timestamps();
         });
     }

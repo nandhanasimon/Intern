@@ -97,8 +97,8 @@
          <label for="city" class="col-md-4 control-label">City</label>
       </td>
       <td>
-         <!--<input id="venue" type="text" class="form-control" name="venue" value="{{ $e->venue }}">-->
          {{ Form::select('city', $city , Input::old('city')) }}
+         </select>  
       </td>
    </tr>
    <tr>
@@ -106,7 +106,6 @@
          <label for="venue" class="col-md-4 control-label">Venue</label>
       </td>
       <td>
-         <!--<input id="venue" type="text" class="form-control" name="venue" value="{{ $e->venue }}">-->
          {{ Form::select('venue', $ven , Input::old('vname')) }}
       </td>
    </tr>

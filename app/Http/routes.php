@@ -60,13 +60,13 @@ Route::post('/updatecity/{num}','admincontroller@updatecity');
 
 Route::get('/deletecity/{num}','admincontroller@deletecity');
 
-
 Route::get('/showupdatevenue/{id}','admincontroller@showupdatevenue');
 
 Route::post('/updatevenue/{id}','admincontroller@updatevenue');
 
 Route::get('/deletevenue/{id}','admincontroller@deletevenue');
 
+Route::post('/ajaxudate','HomeController@ajaxmethod');
 
 
 

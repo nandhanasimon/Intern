@@ -21,7 +21,7 @@ class City extends Model
        'remember_token',
     ];
 
-    public function venue()
+    public function venues()
     {
         return $this->hashMany('App\Venue');
     }

@@ -35,8 +35,7 @@
 	{
 		color: #00008B ;
 	}
-</style>
-
+</style>   
 
 <script type="text/javascript">
 	function validate()
@@ -76,7 +75,11 @@
 			}
 		}
 	}
+	
 </script>
+
+
+<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
 
 <div class="table-responsive">
 		<table class="table">
@@ -109,6 +112,7 @@
 						</td>
 						<td>
 				 			{{ Form::select('city', $city , Input::old('city_name')) }}
+  
 						</td>
 	 				</tr>
 	 				<tr>
@@ -131,7 +135,6 @@
 							<input id="date" type="date" class="form-control" name="date" placeholder="Date">
 							 <!--  {{ Form::text('date', '', array('id' => 'datepicker')) }}  -->
 
-								 <!--<input id="datepicker" type="text" class="form-control" name="date" placeholder="enter the date">-->
 						</td>
 					</tr>
 					<tr>
@@ -169,4 +172,23 @@
 		</form>
 	</table>
 </div>
+
+<script >
+		$(document).ready(function(){
+    	$("#city").onchange(function(){
+    		alert("SUCCESS");
+        	$.ajax({
+    			method: 'POST', 
+    			url: '/ajaxupdate', 
+    			data: {'id' : id}, 
+    			success: function(response){ 
+    		    console.log(response); 
+    			},
+    			error: function(jqXHR, textStatus, errorThrown) { 
+        			console.log(JSON.stringify(jqXHR));
+        			console.log("AJAX error: " + textStatus + ' : ' + errorThrown);
+    			}
+			});
+    	});
+	});</script>
 @endsection
