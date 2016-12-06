@@ -51,6 +51,29 @@ td,a
          <th>Action:Delete</th>
       </tr>
       @foreach($ven as $v)
+
+ <script type="text/javascript">
+
+                            function ConfirmDelete()
+
+                               {
+
+                            var ans = confirm('Are you sure to Delete this Record !!');
+
+                               if (ans == true || ans == 1)
+
+                                   { 
+
+                                     window.location.href = "{{ url('deletevenue/'. $v->id) }}";
+
+                                           }
+
+                                 }    
+                                         </script>
+
+
+
+      
       <tr>
          <td>{{ $v->id }}</td>
          <td>{{ $v->vname }}</td>
@@ -62,7 +85,7 @@ td,a
             <a href="{{ url('showupdatevenue/'. $v->id) }}">Change</a>
          </td>
          <td>
-            <a href="{{ url('deletevenue/'. $v->id) }}" >Delete</a>
+           <a href="#"onclick="ConfirmDelete()" >Delete</a>
          </td>
          
       </tr>

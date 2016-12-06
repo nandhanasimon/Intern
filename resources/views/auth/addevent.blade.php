@@ -104,7 +104,7 @@
 							</label>
 						</td>
 						<td>
-							<input id="name" type="text" class="form-control" name="name" placeholder="Enter the event name">
+							<input id="name" type="text" class="form-control" name="name" placeholder="Enter the event name" pattern="^[a-zA-Z\ ]+$","g">
 						</td>
 					</tr>
 					<tr>

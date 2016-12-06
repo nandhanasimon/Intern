@@ -32,6 +32,13 @@ td,a
     color:#0D0707;
 }
 </style>
+
+
+
+
+
+
+
 <div class="panel-heading" align="center" style="background-color:#292259;" >
 
 <h1 align="center">LIST OF CITIES</h1>
@@ -50,6 +57,27 @@ td,a
      <tr>
         @foreach($cit as $c)
 
+
+        <script type="text/javascript">
+
+                            function ConfirmDelete()
+
+                               {
+
+                            var ans = confirm('Are you sure to Delete this Record !!');
+
+                               if (ans == true || ans == 1)
+
+                                   { 
+
+                                     window.location.href = "{{ url('deletecity/'. $c->id)}}";
+
+                                           }
+
+                                 }    
+                                         </script>
+
+
         <td>
             {{ $c->id }}
         </td>
@@ -60,7 +88,7 @@ td,a
            <a href="{{ url('showupdatecity/'. $c->id)}}">Change</a>
         </td>
         <td>
-            <a href="{{ url('deletecity/'. $c->id)}}" >Delete</a>
+           <a href="#"onclick="ConfirmDelete()" >Delete</a>
 
         </td>
 
