@@ -1,6 +1,27 @@
 @extends('layouts.adminapp')
 
 @section('content')
+@if(count($errors) > 0)
+
+<div class="row">
+    <div class="col-md-6">
+
+        <ul>
+            @foreach($errors->all() as $error)
+
+   <li>
+{{$error}}
+   </li>
+
+            @endforeach
+
+
+        </ul>
+
+
+ </div>
+     </div>
+@endif   
 
 <style>
 
@@ -43,6 +64,8 @@ td,a
 
 <h1 align="center">LIST OF CITIES</h1>
 </div>
+<div class="table-responsive">
+    <table class="table">
 
 <div id="tab" class="col-sm-12" style="background-color:#DFE2EB;">
 
@@ -66,7 +89,7 @@ td,a
 
                             var ans = confirm('Are you sure to Delete this Record !!');
 
-                               if (ans == true || ans == 1)
+                               if (ans == true)
 
                                    { 
 
@@ -96,6 +119,9 @@ td,a
        
     </tr>
     @endforeach
+
+</table>
+</div>
 
 </table>
 </div>

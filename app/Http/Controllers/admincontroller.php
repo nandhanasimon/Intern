@@ -21,18 +21,19 @@ class admincontroller extends Controller
 
     public function storecity(Request $request)
     {
-        $cit=new City;
-        $name=$request->name; 
-        if(City::where('city_name',$name )->first())
-        {
-            return redirect('addcity');
-        }
-        else
-        {
-            $cit->city_name=$request->name;
+
+
+        $this -> validate($request, [
+            'city_name' => 'required|unique:city'
+]);
+       $cit=new City;
+        $city_name=$request->city_name; 
+        
+
+            $cit->city_name=$request->city_name;
             $cit->save();
             return redirect('showcity');
-        }
+    
     }
 
     public function showcity()
