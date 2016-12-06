@@ -59,7 +59,16 @@ class HomeController extends Controller
 
     public function eventdisplay($sid)
     {
-        $event=Events::where("id",$sid)->first();
+        //$event=Events::where("id",$sid)->first();
+
+
+
+        $event= Events::orderBy('event_name')->join('city','city.id', '=', 'events.city_id')
+                                    ->join('venue','venue.id', '=' , 'events.venue_id')
+        ->select('photo','city.city_name', 'venue.vname', 'event_name', 'date', 'start_time','events.id' )
+        ->where('events.id', $sid)
+        ->first();
+
         return view('auth.eventdisplay',compact('event'));
     }
 
@@ -116,7 +125,7 @@ class HomeController extends Controller
 
 $event= Events::orderBy('event_name')->join('city','city.id', '=', 'events.city_id')
                                     ->join('venue','venue.id', '=' , 'events.venue_id')
-                                    ->select('city.city_name', 'venue.vname', 'event_name', 'date', 'start_time' )->get();
+                                    ->select('city.city_name', 'venue.vname', 'event_name', 'date', 'start_time','events.id' )->get();
 //dd($event);
 
 

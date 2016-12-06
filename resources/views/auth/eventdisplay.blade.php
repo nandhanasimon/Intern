@@ -33,7 +33,7 @@
                                         <label for="venue" class="col-md-4 control-label">Venue</label>
                                     </td>
                                     <td>
-                                        <label for="venue" >{{ $event->venue_id }}</label>
+                                        <label for="venue" >{{ $event->vname }}</label>
                                     </td>
                                 </tr>
                                 <tr>
@@ -41,7 +41,7 @@
                                         <label for="city" class="col-md-4 control-label">City</label>
                                     </td>
                                     <td>
-                                        <label for="city" >{{ $event->city_id }}</label>
+                                        <label for="city" >{{ $event->city_name }}</label>
                                     </td>
                                 </tr>
 
