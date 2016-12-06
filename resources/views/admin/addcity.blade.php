@@ -11,8 +11,8 @@
         <ul>
             @foreach($errors->all() as $error)
 
-   <li>
-{{$error}}
+    <li>
+       {{$error}}
    </li>
 
             @endforeach
@@ -21,8 +21,8 @@
         </ul>
 
 
+   </div>
  </div>
-     </div>
 @endif  
 <style>
 h1{
@@ -86,18 +86,18 @@ td
 	
     <input type="hidden" name="_token" value="{{ csrf_token() }}">
 
-    <div id="tab"class="col-sm-12" style="background-color:#DDD6EA;">
-    <table align="center">
-        <tr>
+      <div id="tab"class="col-sm-12" style="background-color:#DDD6EA;">
+        <table align="center">
+         <tr>
             <td>
-                  <label for="city_name" class="col-md-4 control-label">
-                      <font color="#0C0D10">
+              <label for="city_name" class="col-md-4 control-label">
+                <font color="#0C0D10">
                    City Name
 
-                      </font>
-                 </label>
+                </font>
+               </label>
             </td>
-            <td>
+              <td>
                  <input id="name" type="text" class="form-control" name="city_name" placeholder="enter the city name">
             </td>
         </tr>
