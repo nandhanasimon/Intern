@@ -41,15 +41,12 @@ margin: 10;
 
 
 <div class="panel-heading" align="center" style="background-color:#43524B;" >
-
-                   
-                    <h1 align="center"> 
-                    <font color="#858080">
-                        PROFILE
-
-                    </font>
-                    </h1>
-                </div>
+    <h1 align="center"> 
+    <font color="#858080">
+        PROFILE
+    </font>
+    </h1>
+</div>
 
 
 
@@ -65,16 +62,14 @@ margin: 10;
     <table align="center">
         <tr>
             <td>
-<img  src="{{ url('images').'/'. $users->image}}" class="img-circle" alt="hookah-laravel" height="100" width="100">
+<img  src="{{ url('images').'/'. $users->image}}" class="img-circle" height="100" width="100">
 </td>
         <tr>
             <td>
-                  <label for="name" class="col-md-4 control-label">
-              <font color="#0C0D10">
-
+                <label for="name" class="col-md-4 control-label">
+                <font color="#0C0D10">
                     Name
-
-</font>
+                </font>
                 </label>
             </td>
             <td>

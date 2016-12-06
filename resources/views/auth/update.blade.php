@@ -122,6 +122,9 @@ td
     }
 
 </script>
+
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
 <div class="table-responsive">
     <table class="table">
 
@@ -145,14 +148,15 @@ td
 
   <div id="tab"class="col-sm-12" style="background-color:#43524B;">
     <table align="center">
+      <tr>
+         <td>
+               <img  src="{{ url('images').'/'. $user->image}}" class="img-circle" id="disp_img" height="100" width="100">
+         </td>
+      </tr>
         <tr>
             <td>
                   <label for="name" class="col-md-4 control-label">
-
-
                     Name
-
-
                   </label>
             </td>
             <td>
@@ -191,7 +195,23 @@ td
                  <label for="file" class="col-md-4 control-label">Select Image </label>
             </td>
             <td>
-                 <input id="file" type="file"  name="file" value="{{ old('image') }}">
+                 <input id="image" type="file"  name="image">
+
+                  <script type="text/javascript">
+                     function readURL(input) {
+                        if (input.files && input.files[0]) {
+                           var reader = new FileReader();
+                           reader.onload = function (e) {
+                              $('#disp_img').attr('src', e.target.result);
+                           }
+                           reader.readAsDataURL(input.files[0]);
+                        }
+                     }
+                     $("#image").change(function(){
+                        alert("CHANGED");
+                        readURL(this);
+                     });
+                  </script>
             </td>
             
         </tr>

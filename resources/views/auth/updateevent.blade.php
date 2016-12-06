@@ -78,7 +78,7 @@
       }
    }
 </script>
-
+<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
 <h1 align="center">UPDATE EVENT DETAILS</h1>
 <form method="post" action="{{ url('/storeupdateevent/'.$e->id) }}" enctype="multipart/form-data">
   
@@ -86,7 +86,7 @@
 <table align="center">
    <tr>
       <td>
-         <label for="event_name" class="col-md-4 control-label"> Event Name</label>
+         <label for="event_name" class="col-md-4 control-label">Event Name</label>
       </td>
       <td>
          <input id="name" type="text" class="form-control" name="name" value="{{ $e->event_name }}">
@@ -97,8 +97,7 @@
          <label for="city" class="col-md-4 control-label">City</label>
       </td>
       <td>
-         {{ Form::select('city', $city , Input::old('city')) }}
-         </select>  
+         {{ Form::select('city', $city, "select a city", ["id"=>"cities", "class"=>"cities"]) }}
       </td>
    </tr>
    <tr>
@@ -106,7 +105,9 @@
          <label for="venue" class="col-md-4 control-label">Venue</label>
       </td>
       <td>
-         {{ Form::select('venue', $ven , Input::old('vname')) }}
+         <select name="venue" class="venue_options"><br>
+            <option>--select a city---</option>
+         </select>
       </td>
    </tr>
    <tr>
@@ -114,11 +115,7 @@
          <label for="date" class="col-md-4 control-label">Date</label>
       </td>
       <td>
-         <input id="date" type="date" class="form-control" name="date" placeholder="Date">
-               <!--  {{ Form::text('date', "", array('id' => 'datepicker')) }} -->
-
-                 <!--{{ $e->date }}
-                 <input id="datepicker" type="text" class="form-control" name="date" placeholder="enter the date">-->
+         <input id="date" type="date" class="form-control" name="date" value="{{ $e->date }}">
       </td>
    </tr>
    <tr>
@@ -126,7 +123,7 @@
          <label for="start_time" class="col-md-4 control-label">Start Time</label>
       </td>
       <td>
-         <input id="start_time" type="text" class="form-control" name="start_time" value="{{ $e->start_time }}">
+         <input id="start_time" type="time" class="form-control" name="start_time" value="{{ $e->start_time }}">
       </td>
    </tr>
    <tr>
@@ -135,15 +132,56 @@
       </td>
       <td>
          <input id="photo" type="file"  name="photo">
+
+         <script type="text/javascript">
+            function readURL(input) {
+                  if (input.files && input.files[0]) {
+                     var reader = new FileReader();
+                     reader.onload = function (e) {
+                        $('#disp_img').attr('src', e.target.result);
+                     }
+                     reader.readAsDataURL(input.files[0]);
+                  }
+            }
+            $("#photo").change(function(){
+               readURL(this);
+            });
+         </script>
+
+      </td>
+      <td>
+         <img id="disp_img"  src="{{ url('images').'/'.$e->photo }}" height="150" width="150">
       </td>
    </tr>
    <tr>
       <td>
-         <button type="submit" class="btn btn-primary" align="center" onclick="return validate()">
-                    Add</button>
+         <button type="submit" class="btn btn-primary" align="center" onclick="return validate()">UPDATE</button>
       </td>
    </tr>        
 </table>
 </form>
+
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+<script type="text/javascript">
+$(".cities").change(function(){
+         $.ajax({
+            method: 'GET', 
+            url: '/venue-list/' + $(this).val(), 
+            success: function(response){ 
+               $(".venue_options").empty()
+               $.each(response, function(i, obj){
+                  console.log(obj)
+                  $(".venue_options").append("<option value="+obj.id+">"+obj.vname+"</option>")
+               })
+            },
+            error: function(jqXHR, textStatus, errorThrown) { 
+               console.log(JSON.stringify(jqXHR));
+               console.log("AJAX error: " + textStatus + ' : ' + errorThrown);
+            }
+         });
+      });
+
+</script>
 
 @endsection

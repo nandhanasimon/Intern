@@ -34,13 +34,25 @@ class HomeController extends Controller
     public function index()
     {
     
-        $event= Events::all();
+        //$event= Events::all();
+
+        $event= Events::orderBy('event_name')->join('city','city.id', '=', 'events.city_id')
+                                    ->join('venue','venue.id', '=' , 'events.venue_id')
+        ->select('photo','city.city_name', 'venue.vname','creator_id', 'event_name', 'date', 'start_time','events.id' )
+        ->get();
+
         return view('welcome',compact('event')); 
     }
 
     public function homepage()
     {
-        $event= Events::all();
+        //$event= Events::all();
+
+        $event= Events::orderBy('event_name')->join('city','city.id', '=', 'events.city_id')
+                                    ->join('venue','venue.id', '=' , 'events.venue_id')
+        ->select('photo','city.city_name', 'venue.vname','creator_id', 'event_name', 'date', 'start_time','events.id' )
+        ->get();
+
         $cit= City::all();
         return view('homepage',compact('event','cit'));
     }
@@ -65,7 +77,7 @@ class HomeController extends Controller
 
         $event= Events::orderBy('event_name')->join('city','city.id', '=', 'events.city_id')
                                     ->join('venue','venue.id', '=' , 'events.venue_id')
-        ->select('photo','city.city_name', 'venue.vname', 'event_name', 'date', 'start_time','events.id' )
+        ->select('photo','city.city_name', 'venue.vname','creator_id', 'event_name', 'date', 'start_time','events.id' )
         ->where('events.id', $sid)
         ->first();
 
@@ -90,16 +102,12 @@ class HomeController extends Controller
         $users = User::where("id", Auth::user()->id)->first();
         $filepath=public_path('/images/');
 
-        $file=$request->file;
-        if($request->hasfile('file'))
+        $file=$request->image;
+        if($request->hasfile('image'))
         { 
             $name = time(). '-' .$file->getClientOriginalName();
             $users->image = $name;
             $file->move($filepath, $name);
-        }
-        else
-        {
-            return "File does not exist";
         }
 
         $users->name = $request->name;
@@ -123,13 +131,11 @@ class HomeController extends Controller
     {
 
 
-$event= Events::orderBy('event_name')->join('city','city.id', '=', 'events.city_id')
+        $event= Events::orderBy('event_name')->join('city','city.id', '=', 'events.city_id')
                                     ->join('venue','venue.id', '=' , 'events.venue_id')
-                                    ->select('city.city_name', 'venue.vname', 'event_name', 'date', 'start_time','events.id' )->get();
-//dd($event);
-
-
-        //$event= Events::all();
+                                    ->select('city.city_name', 'venue.vname', 'event_name', 'date', 'start_time','events.id' )
+                                    ->where('creator_id',Auth::User()->id)
+                                    ->get();
         return View::make('auth.listevent',compact('event'));
 
     }
@@ -137,16 +143,8 @@ $event= Events::orderBy('event_name')->join('city','city.id', '=', 'events.city_
     public function storeevent(StoreEventRequest $request)
     {
         
-       // $cc=City::findOrFail($request->city);
-        //$vv=Venue::findOrFail($request->venue);
-        
-        $event = new events;
-
-        
-//dd($request->all());
-
-        
-        
+       
+        $event = new Events;
         $event->event_name = $request->name;
 
         $event->venue_id = $request->venue;
@@ -166,10 +164,6 @@ $event= Events::orderBy('event_name')->join('city','city.id', '=', 'events.city_
             $event->photo = $name;
             $file->move($filepath, $name);
         }
-        else
-        {
-            return "File does not exist";
-        }
 
         $event->creator_id=Auth::user()->id;
         $event->save();
@@ -184,25 +178,21 @@ $event= Events::orderBy('event_name')->join('city','city.id', '=', 'events.city_
     public function updateevent($id)
     {
         $e=Events::where("id",$id)->first();
-        $ven = Venue::lists('vname','id');
         $city=City::lists('city_name','id');
-        return view('auth.updateevent',compact('e','ven','city'));
+        return view('auth.updateevent',compact('e','city'));
 
     }
     public function storeupdateevent(Request $request,$id)
     {
 
+        //dd($request->all());
         $event=Events::where("id",$id)->first();
-
-        $cc=City::findOrFail($request->city);
-        $vv=Venue::findOrFail($request->venue);
-
 
         $event->event_name=$request->name;
 
-        $event->venue=$vv->venue;
+        $event->venue_id=$request->venue;
 
-        $event->city_name=$cc->city;
+        $event->city_id=$request->city;
 
 
         $event->date=$request->date;
@@ -216,10 +206,6 @@ $event= Events::orderBy('event_name')->join('city','city.id', '=', 'events.city_
             $name = time(). '-' .$file->getClientOriginalName();
             $event->photo = $name;
             $file->move($filepath, $name);
-        }
-        else
-        {
-            return "File does not exist";
         }
         $event->creator_id=Auth::user()->id;
         $event->save();

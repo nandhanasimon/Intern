@@ -112,13 +112,7 @@
 				 			<label for="city" class="col-md-4 control-label">City</label>
 						</td>
 						<td>
-				 			<!--{{ Form::select('city', $city , Input::old('city_name')) }}-->
-
-
-
-				{{ Form::select('city', $city, "select a city", ["id"=>"cities", "class"=>"cities"]) }}
-							
-  
+							{{ Form::select('city', $city, "select a city", ["id"=>"cities", "class"=>"cities"]) }}
 						</td>
 	 				</tr>
 	 				<tr>
@@ -126,12 +120,9 @@
 				 			<label for="venue" class="col-md-4 control-label">Venue</label>
 						</td>
 						<td>
-
-
 							<select name="venue" class="venue_options"><br>
 								<option>--select a city---</option>
 							</select>
-				 			<!-- {{ Form::select('venue', $ven , Input::old('vname')) }} -->
 						</td>
 	 				</tr>
 					<tr>
@@ -144,8 +135,6 @@
 						</td>
 						<td>
 							<input id="date" type="date" class="form-control" name="date" placeholder="Date">
-							 <!--  {{ Form::text('date', '', array('id' => 'datepicker')) }}  -->
-
 						</td>
 					</tr>
 					<tr>
@@ -157,7 +146,7 @@
 							</label>
 						</td>
 						<td>
-							<input id="start_time" type="text" class="form-control" name="start_time" placeholder="enter the start-time">
+							<input id="start_time" type="time" class="form-control" name="start_time" placeholder="enter the start-time">
 						</td>
 					</tr>
 					<tr>

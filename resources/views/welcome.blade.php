@@ -67,7 +67,7 @@
                                     <label for="venue" >
                                   <font color="#1D1818">
 
-                                        {{ $e->venue }}
+                                        {{ $e->vname }}
                                    </font>
                                     </label>
                                 </td>
