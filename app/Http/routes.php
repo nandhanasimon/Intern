@@ -66,17 +66,4 @@ Route::post('/updatevenue/{id}','admincontroller@updatevenue');
 
 Route::get('/deletevenue/{id}','admincontroller@deletevenue');
 
-Route::post('/ajaxudate','HomeController@ajaxmethod');
-
-
-
-
-//Route::get('test/{name}/{last}', 'ListController@test');
-
-/*Route::get('/', function()
-{
-    $img = \Image::make('images/image1.jpeg')->resize(300, 200);
-    
-    return $img->response('jpeg');
-});*/
-
+Route::get('venue-list/{value}', 'HomeController@getVenues');
