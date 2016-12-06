@@ -23,11 +23,7 @@
 
  </div>
      </div>
-@endif   
-
-
-
-
+@endif  
 <style>
 h1{
     color: #00008B;

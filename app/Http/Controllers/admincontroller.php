@@ -24,8 +24,9 @@ class admincontroller extends Controller
 
 
         $this -> validate($request, [
-            'city_name' => 'required|unique:city'
-]);
+            'city_name' => 'required|unique:city',
+       ]);
+
        $cit=new City;
         $city_name=$request->city_name; 
         
