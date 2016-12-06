@@ -66,8 +66,11 @@ Route::post('/updatevenue/{id}','admincontroller@updatevenue');
 
 Route::get('/deletevenue/{id}','admincontroller@deletevenue');
 
-Route::post('/ajaxudate','HomeController@ajaxmethod');
+//Route::post('/ajaxudate','HomeController@ajaxmethod');
 
+//Route::get('test', "HomeController@test1");
+
+Route::get('venue-list/{value}', 'HomeController@getVenues');
 
 
 

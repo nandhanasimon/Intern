@@ -33,7 +33,7 @@
                                         <label for="venue" class="col-md-4 control-label">Venue</label>
                                     </td>
                                     <td>
-                                        <label for="venue" >{{ $event->venue }}</label>
+                                        <label for="venue" >{{ $event->venue_id }}</label>
                                     </td>
                                 </tr>
                                 <tr>
@@ -41,7 +41,7 @@
                                         <label for="city" class="col-md-4 control-label">City</label>
                                     </td>
                                     <td>
-                                        <label for="city" >{{ $event->city_name }}</label>
+                                        <label for="city" >{{ $event->city_id }}</label>
                                     </td>
                                 </tr>
 
@@ -76,7 +76,8 @@
                         @if($event->creator_id==Auth::User()->id)
 
                            
-                           <a href="{{ url('/updateevent/'.$event->id) }}"><button type="button" class="btn btn-primary" onclick="{{ url('/updateevent') }}" >UPDATE</button></a>
+                           <a href="{{ url('/updateevent/'.$event->id) }}">
+                          <button type="button" class="btn btn-primary" onclick="{{ url('/updateevent') }}" >UPDATE</button></a>
                           <!--  <a href="{{ url('/deleteevent/'.$event->id) }}"> 
                           
                            -->

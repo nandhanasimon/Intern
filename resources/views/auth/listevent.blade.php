@@ -61,7 +61,7 @@ td,a
         
         
        <td><a href="{{ '/eventdisplay/'.$evee->id }}  ">{{ $evee->event_name }}</a></td>
-        <td>{{ $evee->venue }}</td>
+        <td>{{ $evee->vname }}</td>
         <td>{{ $evee->city_name}}</td>
         <td>{{ $evee->date }}</td>
         <td>{{ $evee->start_time }}</td>

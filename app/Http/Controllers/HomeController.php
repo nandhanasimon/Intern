@@ -112,7 +112,15 @@ class HomeController extends Controller
 
     public function listevent()
     {
-        $event= Events::all();
+
+
+$event= Events::orderBy('event_name')->join('city','city.id', '=', 'events.city_id')
+                                    ->join('venue','venue.id', '=' , 'events.venue_id')
+                                    ->select('city.city_name', 'venue.vname', 'event_name', 'date', 'start_time' )->get();
+//dd($event);
+
+
+        //$event= Events::all();
         return View::make('auth.listevent',compact('event'));
 
     }
@@ -120,21 +128,21 @@ class HomeController extends Controller
     public function storeevent(StoreEventRequest $request)
     {
         
-        $cc=City::findOrFail($request->city);
-        $vv=Venue::findOrFail($request->venue);
+       // $cc=City::findOrFail($request->city);
+        //$vv=Venue::findOrFail($request->venue);
         
         $event = new events;
 
         
-
+//dd($request->all());
 
         
         
         $event->event_name = $request->name;
 
-        $event->venue = $vv->vname;
+        $event->venue_id = $request->venue;
 
-        $event->city_name= $cc->city_name;
+        $event->city_id= $request->city;
 
         $event->date = $request->date;
         
@@ -215,5 +223,15 @@ class HomeController extends Controller
     {
         $event=Events::where("id", $id)->delete();
         return redirect('/listevent');
+    }
+
+    public function getVenues($city){
+        $venues = Venue::where('city_id', $city)->get();
+        return $venues;
+    }
+
+    public function test1(){
+        $cities = City::lists("city_name", "id");
+        return view("test", compact('cities'));
     }
 }

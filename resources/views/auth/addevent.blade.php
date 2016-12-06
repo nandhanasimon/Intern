@@ -1,4 +1,4 @@
-@extends('layouts.app')
+\@extends('layouts.app')
 
 
 @section('content')
@@ -77,6 +77,7 @@
 	}
 	
 </script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 
 
 <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
@@ -111,7 +112,12 @@
 				 			<label for="city" class="col-md-4 control-label">City</label>
 						</td>
 						<td>
-				 			{{ Form::select('city', $city , Input::old('city_name')) }}
+				 			<!--{{ Form::select('city', $city , Input::old('city_name')) }}-->
+
+
+
+				{{ Form::select('city', $city, "select a city", ["id"=>"cities", "class"=>"cities"]) }}
+							
   
 						</td>
 	 				</tr>
@@ -120,7 +126,12 @@
 				 			<label for="venue" class="col-md-4 control-label">Venue</label>
 						</td>
 						<td>
-				 			{{ Form::select('venue', $ven , Input::old('vname')) }}
+
+
+							<select name="venue" class="venue_options"><br>
+								<option>--select a city---</option>
+							</select>
+				 			<!-- {{ Form::select('venue', $ven , Input::old('vname')) }} -->
 						</td>
 	 				</tr>
 					<tr>
@@ -172,17 +183,22 @@
 		</form>
 	</table>
 </div>
+<script type="text/javascript" src="{{asset('jquery.min.js')}}"></script>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 
-<script >
-		$(document).ready(function(){
-    	$("#city").onchange(function(){
-    		alert("SUCCESS");
+<script type="text/javascript">
+$(".cities").change(function(){
         	$.ajax({
-    			method: 'POST', 
-    			url: '/ajaxupdate', 
-    			data: {'id' : id}, 
+    			method: 'GET', 
+    			url: '/venue-list/' + $(this).val(), 
     			success: function(response){ 
-    		    console.log(response); 
+    				$(".venue_options").empty()
+    		    	$.each(response, function(i, obj){
+    		    		console.log(obj)
+    		    		$(".venue_options").append("<option value="+obj.id+">"+obj.vname+"</option>")
+    		    		
+
+    		    	})
     			},
     			error: function(jqXHR, textStatus, errorThrown) { 
         			console.log(JSON.stringify(jqXHR));
@@ -190,5 +206,6 @@
     			}
 			});
     	});
-	});</script>
+
+</script>
 @endsection
