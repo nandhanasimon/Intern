@@ -27,11 +27,9 @@ class UpdateRequest extends Request
     {
         return [
 
-        'name' => 'required',
-        'email' => 'email|required',
-        'address' => 'required',
-        'phnumber' => 'required',
         
+        'email' => 'email',
+                
 
 
         ];
