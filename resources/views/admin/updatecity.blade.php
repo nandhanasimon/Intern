@@ -68,7 +68,7 @@ td
                   </label>
                </td>
                <td>
-                  <input id="name" type="text" class="form-control" name="name" value=" {{ $city->city_name }} ">
+                  <input id="city_name" type="text" class="form-control" name="name" value=" {{ $city->city_name }} ">
                </td>
             </tr>
             <tr>

@@ -97,7 +97,7 @@ td
                  </label>
             </td>
             <td>
-                 <input id="name" type="text" class="form-control" name="name" value="{{ $ven->vname }}">
+                 <input id="venue_name" type="text" class="form-control" name="name" value="{{ $ven->vname }}">
             </td>
         </tr>
 

@@ -1,4 +1,4 @@
-\@extends('layouts.app')
+@extends('layouts.app')
 
 
 @section('content')
@@ -50,13 +50,13 @@
 			alert("EVENT NAME IS NOT VALID");
 			return false;
 		}
-		/*var VenueTB = document.getElementById("venue");
+		var VenueTB = document.getElementById("venue");
 		var vanuefilter= new RegExp("^[a-zA-Z\ ]+$","g");
 		if(!vanuefilter.test(VenueTB.value))
 		{
 			alert("VENUE IS NOT VALID");
 			return false;
-		}*/
+		}
 		   var photoTB = document.getElementById("photo").value;
          
       if(photoTB == '')
@@ -122,7 +122,7 @@
 				 			<label for="city" class="col-md-4 control-label">City</label>
 						</td>
 						<td>
-							{{ Form::select('city', $city, "select a city", ["id"=>"cities", "class"=>"cities"]) }}
+							{{ Form::select('city', $city, 'default', ["id"=>"cities", "class"=>"cities"]) }}
 						</td>
 	 				</tr>
 	 				<tr>

@@ -34,12 +34,6 @@ td,a
 }
 </style>
 
-
-
-
-
-
-
 <div class="panel-heading" align="center" style="background-color:#292259;" >
 
 <h1 align="center">LIST OF CITIES</h1>
@@ -58,7 +52,7 @@ td,a
        
      </tr>
      <tr>
-        @foreach($cit as $c)
+        @foreach($cities as $c)
 
 
         <script type="text/javascript">

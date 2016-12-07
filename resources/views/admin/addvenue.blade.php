@@ -97,7 +97,7 @@ td
                  </label>
             </td>
             <td>
-                 <input id="name" type="text" class="form-control" name="name" placeholder="enter the venue name">
+                 <input id="venue_name" type="text" class="form-control" name="name" placeholder="enter the venue name">
             </td>
         </tr>
 

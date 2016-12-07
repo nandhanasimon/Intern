@@ -25,22 +25,20 @@ class admincontroller extends Controller
 
         $this -> validate($request, [
             'city_name' => 'required|unique:city',
-       ]);
+        ]);
 
-       $cit=new City;
+        $cit=new City;
         $city_name=$request->city_name; 
-        
-
-            $cit->city_name=$request->city_name;
-            $cit->save();
-            return redirect('showcity');
+        $cit->city_name=$request->city_name;
+        $cit->save();
+        return redirect('showcity');
     
     }
 
     public function showcity()
     {
-       $cit= City::all();
-       return View::make('admin.showcity',compact('cit'));
+       $cities= City::all();
+       return View::make('admin.showcity',compact('cities'));
 
     }
 
@@ -54,6 +52,9 @@ class admincontroller extends Controller
 
     public function storevenue(Request $request)
     {
+        $this -> validate($request, [
+            'venue_name' => 'required|unique:venue',
+        ]);
     	$t = new Venue;
         $t->vname=$request->name;
     	$t->mobileno=$request->number;
@@ -83,24 +84,14 @@ class admincontroller extends Controller
     
     public function updatecity(Request $request, $id) 
     {
+        $this -> validate($request, [
+            'city_name' => 'required|unique:city',
+        ]);
+
         $city=City::where("id",$id)->first();
-
-        if(City::where('city_name',$request->name )->first())
-        {
-            return redirect('showcity');
-        }
-        else
-        {
-            $cit->city_name=$request->name;
-            $cit->save();
-            return redirect('showcity');
-        }
-
-
-
-        $city->city_name=$request->name;
-        $city->save();
-        return redirect('/');
+        $cit->city_name=$request->city_name;
+        $cit->save();
+        return redirect('showcity');
     }
 
     public function deletecity($id)
@@ -118,6 +109,10 @@ class admincontroller extends Controller
     
     public function updatevenue(Request $request, $id) 
     {
+
+        $this -> validate($request, [
+            'venue_name' => 'required|unique:venue',
+        ]);
         $venue = Venue::findOrFail($id);
         $input = $request->all();
         $venue->fill($input)->save();

@@ -98,7 +98,7 @@ td
                </label>
             </td>
               <td>
-                 <input id="name" type="text" class="form-control" name="city_name" placeholder="enter the city name">
+                 <input id="city_name" type="text" class="form-control" name="city_name" placeholder="Enter the city name">
             </td>
         </tr>
         
