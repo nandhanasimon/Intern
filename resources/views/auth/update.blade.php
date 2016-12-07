@@ -91,7 +91,7 @@ td
         }
 
 
-        var photoTB = document.getElementById("file").value;
+        var photoTB = document.getElementById("image").value;
          /*var photofilter= new RegExp("^[a-zA-Z\ ]+$","g");*/
       if(photoTB == '')
         {
@@ -112,7 +112,7 @@ td
           else
           {
             alert("Invalid format");
-            document.getElementById("file").value = '';
+            document.getElementById("image").value = '';
             return false;
           }
 

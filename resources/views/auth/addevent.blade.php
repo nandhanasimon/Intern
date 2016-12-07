@@ -3,6 +3,9 @@
 
 @section('content')
 <script type="text/javascript" src="js/bootstrap-timepicker.min.js"></script>
+<script type="text/javascript" src="{{asset('jquery.min.js')}}"></script>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
 	@if(count($errors)>0)
 		<div class="row">
 			<div class="col-md-6">
@@ -47,33 +50,40 @@
 			alert("EVENT NAME IS NOT VALID");
 			return false;
 		}
-		var VenueTB = document.getElementById("venue");
+		/*var VenueTB = document.getElementById("venue");
 		var vanuefilter= new RegExp("^[a-zA-Z\ ]+$","g");
 		if(!vanuefilter.test(VenueTB.value))
 		{
 			alert("VENUE IS NOT VALID");
 			return false;
-		}
-		var photoTB = document.getElementById("photo").value;
-		/*var photofilter= new RegExp("^[a-zA-Z\ ]+$","g");*/
-		if(photoTB == '')
-		{
-			alert("PLEASE SELECT A FILE");
-			return false;
-		}
-		else
-		{
-			var extension = photoTB.substring(photoTB.lastIndexOf('.') +1).toLowerCase();
-			if(extension == "jpg" || extension == "png" || extension == "gif")
-			{
-			}
-			else
-			{
-				alert("INVALID FILE FORMAT");
-				document.getElementById("photo").value = '';
-				return false;
-			}
-		}
+		}*/
+		   var photoTB = document.getElementById("photo").value;
+         
+      if(photoTB == '')
+        {
+          alert("Select a file.");
+          return false;
+        }
+
+        else
+        {
+          var extension = photoTB.substring(photoTB.lastIndexOf('.') +1).toLowerCase();
+          if(extension == "jpg" || extension == "png" || extension == "gif")
+
+          {
+           
+           /*success*/
+          }
+
+          else
+          {
+            alert("Invalid format");
+            document.getElementById("photo").value = '';
+            return false;
+          }
+
+        }
+
 	}
 	
 </script>
@@ -172,8 +182,6 @@
 		</form>
 	</table>
 </div>
-<script type="text/javascript" src="{{asset('jquery.min.js')}}"></script>
-<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 
 <script type="text/javascript">
 $(".cities").change(function(){
