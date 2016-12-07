@@ -50,13 +50,13 @@
          alert("EVENT NAME IS NOT VALID");
          return false;
       }
-      var VenueTB = document.getElementById("venue");
+      /*var VenueTB = document.getElementById("venue");
       var vanuefilter= new RegExp("^[a-zA-Z\ ]+$","g");
       if(!vanuefilter.test(VenueTB.value))
       {
          alert("VENUE IS NOT VALID");
          return false;
-      }
+      }*/
       var photoTB = document.getElementById("photo").value;
       if(photoTB == '')
       {
@@ -78,6 +78,9 @@
       }
    }
 </script>
+
+
+
 <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
 <h1 align="center">UPDATE EVENT DETAILS</h1>
 <form method="post" action="{{ url('/storeupdateevent/'.$e->id) }}" enctype="multipart/form-data">
@@ -113,9 +116,26 @@
    <tr>
       <td>
          <label for="date" class="col-md-4 control-label">Date</label>
+
+
+
       </td>
       <td>
-         <input id="date" type="date" class="form-control" name="date" value="{{ $e->date }}">
+         <input type="text" id="datepicker" name ="datepicker"class="form-control">
+         <script>
+$(document).ready(function() {
+$("#datepicker").datepicker({
+
+
+   minDate:+1
+   //maxDate:+60
+/*numberOfMonths: 3,*/
+//showButtonPanel: true
+
+});
+});
+</script>
+      
       </td>
    </tr>
    <tr>
