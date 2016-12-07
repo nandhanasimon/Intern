@@ -150,7 +150,7 @@ td
     <table align="center">
       <tr>
          <td>
-               <img  src="{{ url('images').'/'. $user->image}}" class="img-circle" id="disp_img" height="100" width="100">
+               <img  src="{{ url('images').'/'. $user->image}}" onerror="this.src='/images/default.png'" class="img-circle" id="disp_img" height="100" width="100">
          </td>
       </tr>
         <tr>

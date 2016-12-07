@@ -11,6 +11,17 @@ class User extends Authenticatable
      *
      * @var array
      */
+
+    public function getProfilepictureFilenameAttribute()
+    {
+        if (!$this->attributes['image'])
+        {
+            return '/images/default.png';
+        }
+
+        return $this->attributes['profilepicture_filename'];
+    }
+
     protected $fillable = [
         'name', 'email', 'password',
     ];

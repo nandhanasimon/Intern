@@ -62,7 +62,7 @@ margin: 10;
     <table align="center">
         <tr>
             <td>
-<img  src="{{ url('images').'/'. $users->image}}" class="img-circle" height="100" width="100">
+<img  src="{{ url('images').'/'. $users->image}}" onerror="this.src='/images/default.png'" class="img-circle" height="100" width="100">
 </td>
         <tr>
             <td>
