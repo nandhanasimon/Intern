@@ -97,7 +97,7 @@
          <label for="city" class="col-md-4 control-label">City</label>
       </td>
       <td>
-         {{ Form::select('city', $city, "select a city", ["id"=>"cities", "class"=>"cities"]) }}
+         {{ Form::select('city', $city, null , ["id"=>"cities", "class"=>"cities", 'placeholder' => 'select a city']) }}
       </td>
    </tr>
    <tr>
