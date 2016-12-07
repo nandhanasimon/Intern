@@ -102,7 +102,7 @@
             return false;
          }
          var PhoneTB = document.getElementById("phnumber");
-         var phonefilter = new RegExp("[0-9]{10}$");
+         var phonefilter = new RegExp("[0-9]{3}[0-9]{3}$[0-9]{4}");
          if(!phonefilter.test(PhoneTB.value))
          {
             alert("NOT A PHONE NUMBER!");
