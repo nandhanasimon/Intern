@@ -2,6 +2,12 @@
 
 
 @section('content')
+
+<link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css">
+<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+<script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+<link rel="stylesheet" href="/resources/demos/style.css">
+
 <script type="text/javascript" src="js/bootstrap-timepicker.min.js"></script>
 	@if(count($errors)>0)
 		<div class="row">
@@ -71,6 +77,21 @@
 	}
 	
 </script>
+
+
+<script>
+$(document).ready(function() {
+$("#datepicker").datepicker({
+
+
+	minDate:+1
+	//maxDate:+60
+/*numberOfMonths: 3,*/
+//showButtonPanel: true
+
+});
+});
+</script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 
 
@@ -103,7 +124,13 @@
 					</tr>
 					<tr>
 						<td>
-				 			<label for="city" class="col-md-4 control-label">City</label>
+				 			<label for="city" class="col-md-4 control-label">
+
+                               <font color="#0C0D10">
+				 				City
+                            </font>
+
+				 			</label>
 						</td>
 						<td>
 							{{ Form::select('city', $city, "select a city", ["id"=>"cities", "class"=>"cities"]) }}
@@ -111,9 +138,13 @@
 	 				</tr>
 	 				<tr>
 						<td>
-				 			<label for="venue" class="col-md-4 control-label">Venue</label>
+				 			<label for="venue" class="col-md-4 control-label">
+                              <font color="#0C0D10">
+				 				Venue
+                              </font>
+				 			</label>
 						</td>
-						<td>
+						<td >
 							<select name="venue" class="venue_options"><br>
 								<option>--select a city---</option>
 							</select>
@@ -128,7 +159,7 @@
 							</label>
 						</td>
 						<td>
-							<input id="date" type="date" class="form-control" name="date" placeholder="Date">
+							<input type="text" id="datepicker" name ="datepicker"class="form-control">
 						</td>
 					</tr>
 					<tr>
