@@ -133,7 +133,7 @@ $("#datepicker").datepicker({
 				 			</label>
 						</td>
 						<td>
-							{{ Form::select('city', $city, "select a city", ["id"=>"cities", "class"=>"cities"]) }}
+							{{ Form::select('city', $city, "0" , ["id"=>"cities", "class"=>"cities", 'placeholder' => 'select a city']) }}
 						</td>
 	 				</tr>
 	 				<tr>
@@ -219,6 +219,13 @@ $(".cities").change(function(){
         			console.log("AJAX error: " + textStatus + ' : ' + errorThrown);
     			}
 			});
+
+			if($(".cities").val()=="")
+         {
+            $(".venue_options").empty()
+            //$(".venue_options").append("<option value="">"--Select a venue--"</option>")
+         }
+         
     	});
 
 </script>
