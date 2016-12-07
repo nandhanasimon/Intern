@@ -81,7 +81,7 @@ td
 
       var PhoneTB = document.getElementById("phnumber");
 
-      var phonefilter = new RegExp("0-9]{3}[0-9]{3}$[0-9]{4}");
+      var phonefilter = new RegExp("[0-9]{10}$");
 
       if(!phonefilter.test(PhoneTB.value))
         {
