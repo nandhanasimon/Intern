@@ -94,14 +94,14 @@
 <script type="text/javascript">
    function validate()
    {
-      var NameTB = document.getElementById("name");
+      var NameTB = document.getElementById("guest_name");
       var namefilter= new RegExp("^[a-zA-Z\ ]+$","g");
       if(!namefilter.test(NameTB.value))
          {
             alert("PLEASE ENTER A PROPER NAME!");
             return false;
          }
-         var PhoneTB = document.getElementById("number");
+         var PhoneTB = document.getElementById("phnumber");
          var phonefilter = new RegExp("[0-9]{10}$");
          if(!phonefilter.test(PhoneTB.value))
          {
