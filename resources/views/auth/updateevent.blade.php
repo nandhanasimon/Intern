@@ -111,7 +111,7 @@ return false;
          <label for="city" class="col-md-4 control-label">City</label>
       </td>
       <td>
-         {{ Form::select('city', $city, "0" , ["id"=>"cities", "class"=>"cities", 'placeholder' => 'select a city']) }}
+         {{ Form::select('city', $city, $e->city_id, ["id"=>"cities", "class"=>"cities", 'placeholder' => 'select a city']) }}
       </td>
    </tr>
    <tr>
@@ -195,7 +195,31 @@ $("#datepicker").datepicker({
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 
 <script type="text/javascript">
-$(".cities").change(function(){
+if($(".cities").val()!=0)
+{
+   //alert("VENUE UPDATE")
+   $.ajax({
+            method: 'GET', 
+            url: '/venue-list/' + $(".cities").val(), 
+            success: function(response){ 
+               $(".venue_options").empty()
+               $.each(response, function(i, obj){
+                  console.log(obj)
+                  $(".venue_options").append("<option value="+obj.id+">"+obj.vname+"</option>")
+               })
+            },
+            error: function(jqXHR, textStatus, errorThrown) { 
+               console.log(JSON.stringify(jqXHR));
+               console.log("AJAX error: " + textStatus + ' : ' + errorThrown);
+            }
+         });
+         if($(".cities").val()=="")
+         {
+            $(".venue_options").empty()
+            //$(".venue_options").append("<option value="">"--Select a venue--"</option>")
+         }
+}
+      $(".cities").change(function(){
          $.ajax({
             method: 'GET', 
             url: '/venue-list/' + $(this).val(), 
