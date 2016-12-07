@@ -181,7 +181,7 @@ $("#datepicker").datepicker({
 
       </td>
       <td>
-         <img id="disp_img"  src="{{ url('images').'/'.$e->photo }}" height="150" width="150">
+         <img id="disp_img"  src="{{ url('images').'/'.$e->photo }}" onerror="this.src='/images/defaultevent.jpg'" height="150" width="150">
       </td>
    </tr>
    <tr>

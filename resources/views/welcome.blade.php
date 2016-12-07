@@ -26,7 +26,7 @@
                             <a href="{{ '/eventdisplay/'.$e->id }}  ">
 
                                 <div class="thumbnail">
-                            <img class="img-responsive" src="{{ url('images').'/'. $e->photo}}" alt="Mountain View" style="width:290px;height:290px;">
+                            <img class="img-responsive" src="{{ url('images').'/'. $e->photo}}" onerror="this.src='/images/defaultevent.jpg'" style="width:290px;height:290px;">
                                 </div>
 
                             <br>

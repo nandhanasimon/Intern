@@ -14,7 +14,7 @@
    
                           <div style="width:293px;height:390px;margin-right: 10px;float: left;">
                            
-                            <img src="{{ url('images').'/'. $event->photo}}" alt="Mountain View" style="width:290px;height:290px;"><br>
+                            <img src="{{ url('images').'/'. $event->photo}}" onerror="this.src='/images/defaultevent.jpg'" style="width:290px;height:290px;"><br>
                               </div>
                               <div>                  
                                <table>
@@ -122,9 +122,9 @@
          <div class="modal-body">
          <form action="{{ url('/bookevent/'.$event->id) }}" method="post" enctype="multipart/form-data">
             <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                                  Guest Name <br> <input id="name" type="text" placeholder="Name" name="name" required/>
+                                  Guest Name <br> <input id="guest_name" type="text" placeholder="Name" name="guest_name" required/>
             <br> <br>
-            Phone Number<br> <input id="number" type="text" placeholder="Phone Number" name="number" required/>
+            Phone Number<br> <input id="phnumber" type="text" placeholder="Phone Number" name="phnumber" required/>
             <br> <br>
             Total no. of couples
             <select name="no_of_couples" id="noc">
@@ -135,7 +135,7 @@
                <option value="5">5</option>
             </select>
             <br/> <br>
-         <input type="submit" name="book" value="Book" onclick="return validate()" />
+         <input type="submit" value="Book" onclick="return validate()" />
          </form>  
       </div>
    </div>

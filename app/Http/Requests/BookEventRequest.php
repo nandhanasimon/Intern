@@ -26,8 +26,9 @@ class BookEventRequest extends Request
     {
         return [
 
-        'name' => 'required:guest',
-        'number' => 'required'
+        'guest_name' => 'required:guest',
+        'phnumber' => 'required',
+        'no_of_couples' => 'required',
         
         
             //

@@ -46,10 +46,8 @@ class HomeController extends Controller
 
     public function homepage()
     {
-        //$event= Events::all();
-
         $event= Events::orderBy('event_name')->join('city','city.id', '=', 'events.city_id')
-                                    ->join('venue','venue.id', '=' , 'events.venue_id')
+        ->join('venue','venue.id', '=' , 'events.venue_id')
         ->select('photo','city.city_name', 'venue.vname','creator_id', 'event_name', 'date', 'start_time','events.id' )
         ->get();
 
@@ -59,14 +57,11 @@ class HomeController extends Controller
 
     public function bookevent(BookEventRequest $request , $id)
     {
-   
-        $guests = new Guest;    //Guest is the Model name
-        $guests->guest_name = $request->name;
-        $guests->phnumber = $request->number;
-        $guests->event_id = $id;
-        $guests->no_of_couples=$request->no_of_couples;   //will be passing the names of input feilds
-        $guests->save();
-        return redirect('listevent');
+        $guest = $request->all();
+        $guest['event_id'] = $id;
+        Guest::create($guest);
+
+        return redirect('eventdisplay/'.$id);
     }
 
     public function eventdisplay($sid)
@@ -96,16 +91,19 @@ class HomeController extends Controller
     {
 
         $users = User::where("id", Auth::user()->id)->first();
+        //$user=$request->all();
         $filepath=public_path('/images/');
 
         $file=$request->image;
         if($request->hasfile('image'))
         { 
             $name = time(). '-' .$file->getClientOriginalName();
-            $users->image = $name;
+            $user->image = $name;
             $file->move($filepath, $name);
         }
-
+        /*//$user['id']=Auth::User()->id;
+        dd($user);
+        User::where('id',Auth::User()->id)->update($user);*/
         $users->name = $request->name;
         $users->email = $request->email;
         $users->address = $request->address;
