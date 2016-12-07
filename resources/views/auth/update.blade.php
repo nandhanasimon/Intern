@@ -95,8 +95,8 @@ td
          /*var photofilter= new RegExp("^[a-zA-Z\ ]+$","g");*/
       if(photoTB == '')
         {
-          alert("Select a file.");
-          return false;
+          /*alert("Select a file.");
+          return false;*/
         }
 
         else

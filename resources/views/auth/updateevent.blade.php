@@ -60,8 +60,8 @@
       var photoTB = document.getElementById("photo").value;
       if(photoTB == '')
       {
-         alert("PLEASE SELECT A FILE");
-         return false;
+         /*alert("PLEASE SELECT A FILE");
+         return false;*/
       }
       else
       {
@@ -132,7 +132,7 @@ return false;
 
       </td>
       <td>
-         <input type="text" id="datepicker" name ="datepicker"class="form-control" required>
+         <input type="text" id="datepicker" name ="datepicker" class="form-control" value="{{ $e->date }}" required>
          <script>
 $(document).ready(function() {
 $("#datepicker").datepicker({

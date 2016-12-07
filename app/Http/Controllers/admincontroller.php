@@ -96,7 +96,12 @@ class admincontroller extends Controller
 
     public function deletecity($id)
     {
+        if(Venue::where('city_id',$id))
+        {
+            return redirect('/');            
+        }
         City::where("id",$id)->delete();
+
         return redirect('/');
     }
 
