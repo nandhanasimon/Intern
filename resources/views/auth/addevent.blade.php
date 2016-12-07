@@ -74,6 +74,16 @@
 				return false;
 			}
 		}
+
+		var e = document.getElementById("cities");
+var strUser = e.options[e.selectedIndex].value;
+
+var strUser1 = e.options[e.selectedIndex].text;
+if(strUser==0)
+{
+alert("Please select a city");
+return false;
+}
 	}
 	
 </script>
