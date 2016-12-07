@@ -55,7 +55,7 @@
                 </button>
 
                 <!-- Branding Image -->
-                <a class="navbar-brand" href="{{ url('/') }}>
+                <a class="navbar-brand" href="{{ url('/') }}">
                  <font color="#CDCCCE" face="Times New Roman" font-style="italic">   CLUBBERS </font>
                 </a>
             </div>
