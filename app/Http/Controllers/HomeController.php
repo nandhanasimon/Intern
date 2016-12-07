@@ -178,7 +178,7 @@ class HomeController extends Controller
         $event->event_name=$request->name;
         $event->venue_id=$request->venue;
         $event->city_id=$request->city;
-        $event->date=$request->date;
+        $event->date=$request->datepicker;
         $event->start_time=$request->start_time;
 
         $filepath=public_path('/images/');
