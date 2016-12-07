@@ -129,7 +129,7 @@ $("#datepicker").datepicker({
 							</label>
 						</td>
 						<td>
-							<input id="name" type="text" class="form-control" name="name" placeholder="Enter the event name" pattern="^[a-zA-Z\ ]+$","g">
+							<input id="name" type="text" class="form-control" name="name" placeholder="Enter the event name">
 						</td>
 					</tr>
 					<tr>

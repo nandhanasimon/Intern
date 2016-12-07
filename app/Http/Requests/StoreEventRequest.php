@@ -26,7 +26,7 @@ class StoreEventRequest extends Request
     {
         return [
 
-        'name' => 'required:events',
+        'name' => 'max:30|required:events',
         'venue' => 'required',
         'datepicker' => 'required',
         'start_time' => 'required'

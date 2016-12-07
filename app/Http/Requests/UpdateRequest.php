@@ -27,8 +27,10 @@ class UpdateRequest extends Request
     {
         return [
 
-        
+        'name' => 'max:20',
         'email' => 'email',
+        'phnumber' => 'max:10',
+
                 
 
 
