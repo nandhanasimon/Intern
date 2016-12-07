@@ -97,7 +97,7 @@
          <label for="city" class="col-md-4 control-label">City</label>
       </td>
       <td>
-         {{ Form::select('city', $city, null , ["id"=>"cities", "class"=>"cities", 'placeholder' => 'select a city']) }}
+         {{ Form::select('city', $city, "0" , ["id"=>"cities", "class"=>"cities", 'placeholder' => 'select a city']) }}
       </td>
    </tr>
    <tr>
@@ -106,7 +106,7 @@
       </td>
       <td>
          <select name="venue" class="venue_options"><br>
-            <option>--select a city---</option>
+            <option>--Select a venue---</option>
          </select>
       </td>
    </tr>
@@ -180,6 +180,12 @@ $(".cities").change(function(){
                console.log("AJAX error: " + textStatus + ' : ' + errorThrown);
             }
          });
+
+         if($(".cities").val()=="")
+         {
+            $(".venue_options").empty()
+            //$(".venue_options").append("<option value="">"--Select a venue--"</option>")
+         }
       });
 
 </script>
