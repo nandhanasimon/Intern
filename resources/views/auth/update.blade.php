@@ -102,7 +102,7 @@ td
         else
         {
           var extension = photoTB.substring(photoTB.lastIndexOf('.') +1).toLowerCase();
-          if(extension == "jpg" || extension == "png" || extension == "gif")
+          if(extension == "jpg" || extension == "png" || extension == "gif" || extension == "jpeg")
 
           {
            /* alert("file format is not valid");
